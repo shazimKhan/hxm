@@ -16,7 +16,7 @@ const routes = [
   { path: '/email/verify/:id', name: 'verification.verify', component: page('auth/verification/verify.vue') },
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
 
-  { path: '/home', name: 'home', component: page('home.vue') },
+  { path: '/admin', name: 'admin', component: page('admin.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),
@@ -28,7 +28,7 @@ const routes = [
   }
 ]
 
-export function createRouter () {
+export function createRouter() {
   return new Router({
     routes,
     scrollBehavior,

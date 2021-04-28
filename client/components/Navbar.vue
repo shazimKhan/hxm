@@ -1,44 +1,88 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div class="container">
-      <!-- <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+      <router-link
+        :to="{ name: user ? 'home' : 'welcome' }"
+        class="navbar-brand text-white"
+      >
         {{ appName }}
-      </router-link> -->
+      </router-link>
 
-      <!-- <button :aria-label="$t('toggle_navigation')" class="navbar-toggler" type="button"
-              data-toggle="collapse" data-target="#navbarToggler"
-              aria-controls="navbarToggler" aria-expanded="false"
+      <button
+        :aria-label="$t('toggle_navigation')"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggler"
+        aria-controls="navbarToggler"
+        aria-expanded="false"
       >
         <span class="navbar-toggler-icon" />
-      </button> -->
-
-      <div id="navbarToggler" class="collapse navbar-collapse">
-        <!-- <ul class="navbar-nav"> -->
+      </button>
+      <div id="navbarToggler" class="collapse navbar-collapse pl-5">
+        <ul class="navbar-nav">
           <!-- <locale-dropdown /> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
-        <!-- </ul> -->
+          <li v-if="user" class="nav-item dropdown">
+            <!-- <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            > -->
+            <a-select
+              :default-value="moduleList"
+              style="width: 200px"
+              class="bg-info"
+              @change="getModuleValue"
+            >
+              <a-select-option value="admin-center"
+                >Admin Center</a-select-option
+              >
+              <a-select-option value="employee-profile"
+                >Employee profile</a-select-option
+              >
+              <a-select-option value="work-schedule"
+                >Work Schedule</a-select-option
+              >
+              <a-select-option value="leave-management"
+                >Leave Management</a-select-option
+              >
+            </a-select>
+            <!-- </a> -->
+          </li>
+        </ul>
 
         <ul class="navbar-nav ml-auto">
           <!-- Authenticated -->
           <li v-if="user" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark"
-               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
-              <img :src="user.photo_url" class="rounded-circle profile-photo mr-1">
-              {{ user.name }}
+              <img
+                :src="user.photo_url"
+                class="rounded-circle profile-photo mr-1"
+              />
             </a>
             <div class="dropdown-menu">
-              <router-link :to="{ name: 'settings.profile' }" class="dropdown-item pl-3">
+              <router-link
+                :to="{ name: 'settings.profile' }"
+                class="dropdown-item pl-3"
+              >
                 <fa icon="cog" fixed-width />
-                {{ $t('settings') }}
+                Setting
               </router-link>
 
               <div class="dropdown-divider" />
               <a class="dropdown-item pl-3" href="#" @click.prevent="logout">
                 <fa icon="sign-out-alt" fixed-width />
-                {{ $t('logout') }}
+                Logout
               </a>
             </div>
           </li>
@@ -62,38 +106,51 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import LocaleDropdown from './LocaleDropdown'
+import { mapGetters, mapActions } from "vuex";
+import LocaleDropdown from "./LocaleDropdown";
 
 export default {
   components: {
-    LocaleDropdown
+    LocaleDropdown,
   },
 
   data: () => ({
-    appName: process.env.appName
+    appName: process.env.appName,
   }),
 
   computed: mapGetters({
-    user: 'auth/user'
+    user: "auth/user",
+    moduleList: "admin-center/getModuleList",
   }),
 
   methods: {
-    async logout () {
+    ...mapActions({
+      changeModule: "admin-center/changeModule",
+    }),
+    getModuleValue(val) {
+      console.log(val);
+      this.changeModule(val);
+    },
+    async logout() {
       // Log out the user.
-      await this.$store.dispatch('auth/logout')
+      await this.$store.dispatch("auth/logout");
 
       // Redirect to login.
-      this.$router.push({ name: 'login' })
-    }
-  }
-}
+      this.$router.push({ name: "login" });
+    },
+  },
+};
 </script>
 
-<style scoped>
+<style lang="scss">
+.ant-select-selection {
+  background-color: #17a2b8 !important;
+  border: 1px solid #17a2b8 !important;
+  color: white;
+}
 .profile-photo {
   width: 2rem;
   height: 2rem;
-  margin: -.375rem 0;
+  margin: -0.375rem 0;
 }
 </style>

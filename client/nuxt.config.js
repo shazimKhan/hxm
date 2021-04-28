@@ -44,7 +44,8 @@ module.exports = {
     '~plugins/axios',
     '~plugins/fontawesome',
     '~plugins/nuxt-client-init',
-    { src: '~plugins/bootstrap', mode: 'client' }
+    { src: '~plugins/bootstrap', mode: 'client' },
+    { src: '~plugins/ant-design-vue', mode: 'client' }
   ],
 
   modules: [
@@ -57,7 +58,7 @@ module.exports = {
 
   hooks: {
     generate: {
-      done (generator) {
+      done(generator) {
         // Copy dist files to public/_nuxt
         if (generator.nuxt.options.dev === false && generator.nuxt.options.mode === 'spa') {
           const publicDir = join(generator.nuxt.options.rootDir, 'public', '_nuxt')
