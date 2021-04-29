@@ -143,10 +143,12 @@ export default {
 </script>
 
 <style lang="scss">
-.ant-select-selection {
-  background-color: #17a2b8 !important;
-  border: 1px solid #17a2b8 !important;
-  color: white;
+.navbar {
+  .ant-select-selection {
+    background-color: #17a2b8;
+    border: 1px solid #17a2b8;
+    color: white;
+  }
 }
 .profile-photo {
   width: 2rem;
