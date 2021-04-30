@@ -17,7 +17,9 @@
                 @change="handleChange"
               >
                 <a-icon slot="suffixIcon" type="search" />
-                <a-select-option value="work"> Work Schedule </a-select-option>
+                <a-select-option value="work">
+                  Work Schedule
+                </a-select-option>
               </a-select>
             </a-col>
             <a-col :span="4" class="pl-4">
@@ -42,7 +44,9 @@
                 @change="handleChange"
               >
                 <a-icon slot="suffixIcon" type="search" />
-                <a-select-option value="no"> No </a-select-option>
+                <a-select-option value="no">
+                  No
+                </a-select-option>
               </a-select>
             </a-col>
             <a-col :span="11" align="end" class="pt-1">
@@ -57,7 +61,9 @@
                     @change="handleChange"
                   >
                     <a-icon slot="suffixIcon" type="search" />
-                    <a-select-option value="no"> No Selection </a-select-option>
+                    <a-select-option value="no">
+                      No Selection
+                    </a-select-option>
                   </a-select>
                 </a-col>
               </a-row>
@@ -99,16 +105,14 @@
               <a-timeline>
                 <a-timeline-item>
                   <span class="text-danger pr-1">*</span>External Name
-                  <span class="font-weight-bold pl-2">8hr7to15</span
-                  ><a-icon
+                  <span class="font-weight-bold pl-2">8hr7to15</span><a-icon
                     type="question-circle"
                     class="pl-4 text-dark"
-                  ></a-icon>
+                  />
                 </a-timeline-item>
                 <a-timeline-item class="pl-2">
                   Search Field
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   <span class="text-danger pr-1">*</span> Is Individual Work
@@ -118,50 +122,42 @@
                 <a-timeline-item>
                   <span class="text-danger pr-1">*</span> Model
                   <span class="font-weight-bold pl-2">Simple</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Hours Per Day
                   <span class="font-weight-bold pl-2">8</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Hours Per Week
                   <span class="font-weight-bold pl-2">40</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Hours Per Month
                   <span class="font-weight-bold pl-2">174</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Hours Per Month
                   <span class="font-weight-bold pl-2">2,080</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Hours Per Year
                   <span class="font-weight-bold pl-2">2,080</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Average Working Days Per Week
                   <span class="font-weight-bold pl-2">2,080</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item>
                   Flexible Requesting Allowed
                   <span class="font-weight-bold pl-2">No</span>
-                  <a-icon type="question-circle" class="pl-4 text-dark">
-                  </a-icon>
+                  <a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
               </a-timeline>
             </a-col>
@@ -181,49 +177,48 @@
     </a-row>
   </div>
 </template>
-             
 
 <script>
 const columns = [
   {
-    title: "Day",
-    dataIndex: "day",
-    key: "day",
+    title: 'Day',
+    dataIndex: 'day',
+    key: 'day'
   },
   {
-    title: "Planned Hours And Minutes (hh:mm)",
-    dataIndex: "hours",
-    key: "hours",
+    title: 'Planned Hours And Minutes (hh:mm)',
+    dataIndex: 'hours',
+    key: 'hours'
   },
   {
-    title: "Planned Hours (Decimal)",
-    dataIndex: "planedHours",
-    key: "planedHours",
-  },
-];
+    title: 'Planned Hours (Decimal)',
+    dataIndex: 'planedHours',
+    key: 'planedHours'
+  }
+]
 
-const data = [];
-for (var i = 0; i < 5; i++) {
+const data = []
+for (let i = 0; i < 5; i++) {
   data.push({
     key: i,
     day: i + 1,
-    hours: "08:00",
-    planedHours: "8",
-  });
+    hours: '08:00',
+    planedHours: '8'
+  })
 }
 export default {
-  data() {
+  data () {
     return {
       data,
-      columns,
-    };
+      columns
+    }
   },
   methods: {
-    handleChange(val) {
-      console.log(val);
-    },
-  },
-};
+    handleChange (val) {
+      console.log(val)
+    }
+  }
+}
 </script>
 <style>
 .ant-timeline-item-tail {
