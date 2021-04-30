@@ -16,7 +16,7 @@
                 style="width: 100%"
                 @change="handleChange"
               >
-                <a-icon slot="suffixIcon" type="search" />
+                <a-icon slot="suffixIcon" type="down" />
                 <a-select-option value="work">
                   Work Schedule
                 </a-select-option>
@@ -28,9 +28,12 @@
                 style="width: 100%"
                 @change="handleChange"
               >
-                <a-icon slot="suffixIcon" type="search" />
+                <a-icon slot="suffixIcon" type="down" />
                 <a-select-option value="8hr7to15">
                   8hr7to15 (8hr7to15)
+                </a-select-option>
+                <a-select-option value="1">
+                  8hr15to22 (8hr15to22)
                 </a-select-option>
               </a-select>
             </a-col>
@@ -43,9 +46,15 @@
                 style="width: 100%"
                 @change="handleChange"
               >
-                <a-icon slot="suffixIcon" type="search" />
+                <a-icon slot="suffixIcon" type="down" />
                 <a-select-option value="no">
                   No
+                </a-select-option>
+                <a-select-option value="yes">
+                  Yes
+                </a-select-option>
+                <a-select-option value="both">
+                  Both
                 </a-select-option>
               </a-select>
             </a-col>
@@ -60,7 +69,7 @@
                     style="width: 100%"
                     @change="handleChange"
                   >
-                    <a-icon slot="suffixIcon" type="search" />
+                    <a-icon slot="suffixIcon" type="down" />
                     <a-select-option value="no">
                       No Selection
                     </a-select-option>
@@ -89,7 +98,7 @@
               </a>
               <a-menu slot="overlay">
                 <a-menu-item>
-                  <a href="javascript:;">Action 1</a>
+                  <a href="javascript:;">Edit</a>
                 </a-menu-item>
                 <a-menu-item>
                   <a href="javascript:;">Action 2</a>
