@@ -55,6 +55,9 @@ module.exports = {
   build: {
     extractCSS: true
   },
+  buildModules: [
+    '@nuxtjs/color-mode'
+  ],
 
   hooks: {
     generate: {

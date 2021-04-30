@@ -146,8 +146,6 @@ export default {
     background-color: #346596 !important;
 }
 .navbar {
- 
-  
   .ant-select-selection {
     background-color: #2a4b50;
     border: 1px #020e0f;
