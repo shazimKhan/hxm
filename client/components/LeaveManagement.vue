@@ -142,21 +142,16 @@
             </a-row>
           </a-col>
         </a-row>
-
-        <a-row class="pt-4">
-          <h6>Holiday Assignments</h6>
-          <a-col :span="5">
-            <p><span class="text-danger">*</span> Date Of Holiday</p>
-            <a-row>
-              <a-col v-for="list in lists" :key="list" :span="24" class="py-2">
+        <a-row>
+          <a-col :span="24">
+            <a-table :columns="columns" :data-source="data" :bordered="false" :stripped="false">
+              <template slot="title">
+                <h6>Holiday Assignments</h6>
+              </template>
+              <span slot="date">
                 <a-date-picker :default-value="moment('01/01/2018', dateFormat)" :format="dateFormat" />
-              </a-col>
-            </a-row>
-          </a-col>
-          <a-col :span="4">
-            <p><span class="text-danger">*</span> Holiday Class</p>
-            <a-row>
-              <a-col v-for="item in items" :key="item" :span="24" class="py-2">
+              </span>
+              <span slot="full">
                 <a-select
                   default-value="work"
                   style="width: 50%"
@@ -167,13 +162,8 @@
                     Full
                   </a-select-option>
                 </a-select>
-              </a-col>
-            </a-row>
-          </a-col>
-          <a-col :span="9">
-            <p><span class="text-danger">*</span> Holiday</p>
-            <a-row>
-              <a-col v-for="item in items" :key="item" :span="24" class="py-2">
+              </span>
+              <span slot="holiday">
                 <a-select
                   default-value="work"
                   style="width: 50%"
@@ -184,70 +174,38 @@
                     New Years Day (New_years )
                   </a-select-option>
                 </a-select>
-                <a-icon type="project" />
-              </a-col>
-            </a-row>
-          </a-col>
-          <a-col :span="5">
-            <a-row :gutter="24" class="mt-4 pt-4">
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="delete" />
+              </span>
+              <span slot="icon">
+                <a-row>
+                  <a-col :span="3" class="mr-3">
+                    <div class="send-icon">
+                      <a-icon type="delete" />
+                    </div>
+                  </a-col>
+                  <a-col :span="3" class="mr-2">
+                    <div class="send-icon">
+                      <a-icon type="arrow-down" />
+                    </div>
+                  </a-col>
+                  <a-col :span="1">
+                    <div class="send-icon">
+                      <a-icon type="arrow-up" />
+                    </div>
+                  </a-col>
+                </a-row>
+              </span>
+              <template slot="footer" class="bg-footer">
+                <div class="save-btn text-right">
+                  <a-button type="success">
+                    cancel
+                  </a-button>
+
+                  <a-button type="primary">
+                    Save
+                  </a-button>
                 </div>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="arrow-down" />
-                </div>
-              </a-col>
-            </a-row>
-            <a-row :gutter="24" class="py-3">
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="delete" />
-                </div>
-              </a-col>
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="arrow-down" />
-                </div>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="arrow-up" />
-                </div>
-              </a-col>
-            </a-row>
-            <a-row :gutter="24" class="py-2">
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="delete" />
-                </div>
-              </a-col>
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="arrow-down" />
-                </div>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="arrow-up" />
-                </div>
-              </a-col>
-            </a-row>
-            <a-row :gutter="24" class=" pt-3">
-              <a-col :span="3">
-                <div class="send-icon">
-                  <a-icon type="delete" />
-                </div>
-              </a-col>
-              <a-col :span="3" />
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="arrow-up" />
-                </div>
-              </a-col>
-            </a-row>
+              </template>
+            </a-table>
           </a-col>
         </a-row>
       </a-card>
@@ -257,6 +215,47 @@
 </template>
 <script>
 import moment from 'moment'
+const columns = [
+  {
+    title: 'Date Of Holiday',
+    dataIndex: 'date_of_holiday',
+    key: 'date_of_holiday',
+    scopedSlots: { customRender: 'date' },
+    width: 180
+
+  },
+  {
+    title: 'Holiday Class',
+    dataIndex: 'holiday_class',
+    scopedSlots: { customRender: 'full' },
+    key: 'holiday_class',
+    width: 120
+
+  },
+  {
+    title: 'Holiday',
+    dataIndex: 'holiday',
+    key: 'holiday',
+    scopedSlots: { customRender: 'holiday' },
+    width: 250
+
+  },
+  {
+    title: '',
+    dataIndex: 'planedHours',
+    key: 'planedHours',
+    scopedSlots: { customRender: 'icon' },
+    width: 120
+
+  }
+]
+
+const data = []
+for (let i = 0; i < 5; i++) {
+  data.push({
+    key: i
+  })
+}
 export default {
   data () {
     return {
@@ -264,7 +263,9 @@ export default {
       monthFormat: 'MM/YYYY',
       dateFormatList: ['DD/MM/YYYY', 'DD/MM/YY'],
       lists: [1, 2, 3, 4],
-      items: [1, 2, 3, 4]
+      items: [1, 2, 3, 4],
+      data,
+      columns
 
     }
   },
@@ -277,6 +278,14 @@ export default {
 }
 </script>
 <style lang="scss">
+.bg-footer {
+  background-color: #ffffff !important;
+  border: none;
+}
+
+tr:last-child td {
+  padding-bottom: 10px;
+}
 .send-icon {
   i.anticon.anticon-weibo-circle {
     font-size: 20px;
