@@ -56,7 +56,7 @@ module.exports = {
     extractCSS: true
   },
   buildModules: [
-    '@nuxtjs/color-mode'
+    '@nuxtjs/svg','@nuxtjs/color-mode'
   ],
 
   hooks: {

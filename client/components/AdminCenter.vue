@@ -1,5 +1,7 @@
 <template>
+  <div class="theme">
   <ColorModePicker />
+</div>
   <!-- <div>
     <div class="row">
       <div class="col-6">
@@ -19,6 +21,10 @@ export default {
 };
 </script>
 <style>
+.theme {
+    text-align: center;
+    padding: 50px;
+  }
 body{
   color: black;
 }

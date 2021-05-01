@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
     "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/svg": "^0.1.12",
     "eslint": "^7.14.0",
     "fs-extra": "^9.0.1",
     "node-sass": "^5.0.0",
