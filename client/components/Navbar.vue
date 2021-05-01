@@ -147,7 +147,7 @@ export default {
 }
 .navbar {
   .ant-select-selection {
-    background-color: #2a4b50;
+    background-color: #22214e86;
     border: 1px #020e0f;
     color: white;
   }
