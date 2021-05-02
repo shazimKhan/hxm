@@ -36,8 +36,7 @@
               :default-value="moduleList"
               style="width: 200px"
               class="bg-info"
-              @change="getModuleValue"
-            >
+              @change="getModuleValue">
               <a-select-option value="admin-center"
                 >Admin Center</a-select-option
               >
@@ -228,10 +227,13 @@ export default {
 </script>
 
 <style lang="scss">
+ .bg-info {
+    background-color: #346596 !important;
+}
 .navbar {
   .ant-select-selection {
-    background-color: #17a2b8;
-    border: 1px solid #17a2b8;
+    background-color: #22214e86;
+    border: 1px #020e0f;
     color: white;
   }
 }

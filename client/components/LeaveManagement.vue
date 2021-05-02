@@ -1,13 +1,91 @@
 <template>
   <div>
- 
+    <a-row>
+      <a-col :span="24" class="">
+        <a-page-header
+          style="border: 1px solid rgb(235, 237, 240)"
+          :title="false"
+        >
+          <a-row>
+            <a-col :span="1" class="pt-1">
+              <span class="font-weight-bold">Search</span>
+            </a-col>
+            <a-col :span="3">
+              <a-select
+                default-value="work"
+                style="width: 100%"
+                @change="handleChange"
+              >
+                <a-icon slot="suffixIcon" type="down" />
+                <a-select-option value="work">
+                  Holiday Calender
+                </a-select-option>
+                <a-select-option value="1"> Work Sechdule </a-select-option>
+              </a-select>
+            </a-col>
+            <a-col :span="4" class="pl-4">
+              <a-select
+                default-value="name"
+                style="width: 100%"
+                @change="handleChange"
+              >
+                <a-icon slot="suffixIcon" type="down" />
+                <a-select-option value="name"> No Selection </a-select-option>
+                <a-select-option value="1"> Holiday 1 </a-select-option>
+                <a-select-option value="2"> Holiday 2 </a-select-option>
+                <a-select-option value="3"> Holiday 3 </a-select-option>
+                <a-select-option value="4"> Holiday 4 </a-select-option>
+              </a-select>
+            </a-col>
+            <a-col :span="3" class="pt-1 pl-4">
+              <span class="font-weight-bold">Includes Inactive</span>
+            </a-col>
+            <a-col :span="2">
+              <a-select
+                default-value="both"
+                style="width: 100%"
+                @change="handleChange"
+              >
+                <a-icon slot="suffixIcon" type="down" />
+                <a-select-option value="no"> No </a-select-option>
+                <a-select-option value="yes"> Yes </a-select-option>
+                <a-select-option value="both"> Both </a-select-option>
+              </a-select>
+            </a-col>
+            <a-col :span="11" align="end" class="pt-1">
+              <a-row>
+                <a-col :span="16" class="pt-1 pr-3">
+                  <span class="font-weight-bold">Create New</span>
+                </a-col>
+                <a-col :span="8">
+                  <a-select
+                    default-value="no"
+                    style="width: 100%"
+                    @change="handleChange"
+                  >
+                    <a-icon slot="suffixIcon" type="down" />
+                    <a-select-option value="no"> No Selection </a-select-option>
+                  </a-select>
+                </a-col>
+              </a-row>
+            </a-col>
+          </a-row>
+
+          <!-- <template slot="extra">
+            <a-button key="3"> Operation </a-button>
+            <a-button key="2"> Operation </a-button>
+            <a-button key="1" type="primary"> Primary </a-button>
+          </template> -->
+        </a-page-header>
+      </a-col>
+    </a-row>
     <a-row>
       <a-card :title="'  Holiday Caldendar: Holcal (Holcal)'">
         <a-row>
           <a-col :span="16" :offset="7">
             <a-row :gutter="16">
               <a-col :span="4" class="text-right">
-                <p><span class="text-danger">*</span> Name</p>
+                <p><span class="text-danger">*</span>Name</p>
               </a-col>
               <a-col :span="5">
                 <a-input placeholder="Holcal" />
@@ -25,16 +103,22 @@
             </a-row>
             <a-row :gutter="16" class="my-2">
               <a-col :span="4" class="text-right">
-                <p>Country</p>
+                <p>Country/Region</p>
               </a-col>
               <a-col :span="4">
                 <a-select
-                  default-value="work"
+                  default-value="default"
                   style="width: 100%"
                   @change="handleChange"
                 >
-                  <a-icon slot="suffixIcon" type="search" />
-                  <a-select-option value="work"> No Selection </a-select-option>
+                  <a-icon slot="suffixIcon" type="down" />
+                  <a-select-option value="default">
+                    No Selection
+                  </a-select-option>
+                  <a-select-option value="1"> Pakistan </a-select-option>
+                  <a-select-option value="2"> India </a-select-option>
+                  <a-select-option value="3"> America </a-select-option>
+                  <a-select-option value="4"> China </a-select-option>
                 </a-select>
               </a-col>
               <a-col :span="1">
@@ -83,24 +167,37 @@
               </span>
               <span slot="full">
                 <a-select
-                  default-value="work"
+                  default-value="none"
                   style="width: 50%"
                   @change="handleChange"
                 >
-                  <a-icon slot="suffixIcon" type="search" />
-                  <a-select-option value="work"> Full </a-select-option>
+                  <a-icon slot="suffixIcon" type="down" />
+                  <a-select-option value="full"> Full </a-select-option>
+                  <a-select-option value="half"> Half </a-select-option>
+                  <a-select-option value="none"> None </a-select-option>
                 </a-select>
               </span>
               <span slot="holiday">
                 <a-select
-                  default-value="work"
+                  default-value="name"
                   style="width: 50%"
                   @change="handleChange"
                 >
-                  <a-icon slot="suffixIcon" type="search" />
-                  <a-select-option value="work">
-                    New Years Day (New_years )
+                  <a-icon slot="suffixIcon" type="down" />
+                  <a-select-option value="name">
+                    Select Holiday Name
                   </a-select-option>
+                  <a-select-option value="1"> Happy New Year </a-select-option>
+                  <a-select-option value="2">
+                    Independence Day
+                  </a-select-option>
+                  <a-select-option value="3"> Labour Day </a-select-option>
+                  <a-select-option value="4"> Pakistan Day </a-select-option>
+                  <a-select-option value="5">
+                    Kashmir Solidarity Day
+                  </a-select-option>
+                  <a-select-option value="6"> Eid al-Fitr </a-select-option>
+                  <a-select-option value="7"> Eid al-Adha </a-select-option>
                 </a-select>
               </span>
               <span slot="icon">
@@ -124,7 +221,7 @@
               </span>
               <template slot="footer" class="bg-footer">
                 <div class="save-btn text-right">
-                  <a-button type="success"> cancel </a-button>
+                  <a-button type="success"> Reset </a-button>
 
                   <a-button type="primary"> Save </a-button>
                 </div>
