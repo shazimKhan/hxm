@@ -32,7 +32,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             > -->
-              <a-select
+              <!-- <a-select
                 :default-value="moduleList"
                 style="width: 200px"
                 class="bg-info"
@@ -49,7 +49,7 @@
                 <a-select-option value="leave-management"
                   >Leave Management</a-select-option
                 >
-              </a-select>
+              </a-select> -->
               <!-- </a> -->
             </li>
           </ul>
@@ -103,7 +103,9 @@
         </div>
       </div>
     </nav>
+
     <a-row>
+      <li v-if="user" class="nav-item dropdown">
       <a-col :span="24" class="">
         <a-page-header
           style="border: 1px solid rgb(235, 237, 240)"
@@ -135,11 +137,14 @@
             </a-col>
             <a-col :span="4" class="pl-4">
               <a-select
-                default-value="8hr7to15"
+                default-value="default"
                 style="width: 100%"
                 @change="handleChange"
               >
                 <a-icon slot="suffixIcon" type="down" />
+                <a-select-option value="default">
+                  No Selection
+                </a-select-option>
                 <a-select-option value="8hr7to15">
                   8hr7to15 (8hr7to15)
                 </a-select-option>
@@ -184,6 +189,7 @@
           </template> -->
         </a-page-header>
       </a-col>
+      </li>
     </a-row>
   </div>
 </template>
