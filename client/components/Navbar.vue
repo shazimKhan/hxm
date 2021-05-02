@@ -36,7 +36,6 @@
                 :default-value="moduleList"
                 style="width: 200px"
                 class="bg-info"
-                @change="getModuleValue"
               >
                 <a-select-option value="admin-center"
                   >Admin Center</a-select-option
