@@ -106,7 +106,7 @@
 
     <a-row>
       <li v-if="user" class="nav-item dropdown">
-      <a-col :span="24" class="">
+      <a-col :span="24" class=" ">
         <a-page-header
           style="border: 1px solid rgb(235, 237, 240)"
           :title="false"
