@@ -36,10 +36,18 @@
                   <a-select-option value="default">
                     No Selection
                   </a-select-option>
-                  <a-select-option value="1"> Pakistan </a-select-option>
-                  <a-select-option value="2"> India </a-select-option>
-                  <a-select-option value="3"> America </a-select-option>
-                  <a-select-option value="4"> China </a-select-option>
+                  <a-select-option value="1">
+                    Pakistan
+                  </a-select-option>
+                  <a-select-option value="2">
+                    India
+                  </a-select-option>
+                  <a-select-option value="3">
+                    America
+                  </a-select-option>
+                  <a-select-option value="4">
+                    China
+                  </a-select-option>
                 </a-select>
               </a-col>
               <a-col :span="1">
@@ -142,9 +150,13 @@
               </span>
               <template slot="footer" class="bg-footer">
                 <div class="save-btn text-right">
-                  <a-button type="success"> Reset </a-button>
+                  <a-button type="success">
+                    Reset
+                  </a-button>
 
-                  <a-button type="primary"> Save </a-button>
+                  <a-button type="primary">
+                    Save
+                  </a-button>
                 </div>
               </template>
             </a-table>
@@ -156,63 +168,63 @@
   </div>
 </template>
 <script>
-import moment from "moment";
+import moment from 'moment'
 const columns = [
   {
-    title: "Date Of Holiday",
-    dataIndex: "date_of_holiday",
-    key: "date_of_holiday",
-    scopedSlots: { customRender: "date" },
-    width: 180,
+    title: 'Date Of Holiday',
+    dataIndex: 'date_of_holiday',
+    key: 'date_of_holiday',
+    scopedSlots: { customRender: 'date' },
+    width: 180
   },
   {
-    title: "Holiday Class",
-    dataIndex: "holiday_class",
-    scopedSlots: { customRender: "full" },
-    key: "holiday_class",
-    width: 120,
+    title: 'Holiday Class',
+    dataIndex: 'holiday_class',
+    scopedSlots: { customRender: 'full' },
+    key: 'holiday_class',
+    width: 120
   },
   {
-    title: "Holiday",
-    dataIndex: "holiday",
-    key: "holiday",
-    scopedSlots: { customRender: "holiday" },
-    width: 250,
+    title: 'Holiday',
+    dataIndex: 'holiday',
+    key: 'holiday',
+    scopedSlots: { customRender: 'holiday' },
+    width: 250
   },
   {
-    title: "",
-    dataIndex: "planedHours",
-    key: "planedHours",
-    scopedSlots: { customRender: "icon" },
-    width: 120,
-  },
-];
+    title: '',
+    dataIndex: 'planedHours',
+    key: 'planedHours',
+    scopedSlots: { customRender: 'icon' },
+    width: 120
+  }
+]
 
-const data = [];
+const data = []
 for (let i = 0; i < 5; i++) {
   data.push({
-    key: i,
-  });
+    key: i
+  })
 }
 export default {
-  data() {
+  data () {
     return {
-      dateFormat: "DD/MM/YYYY",
-      monthFormat: "MM/YYYY",
-      dateFormatList: ["DD/MM/YYYY", "DD/MM/YY"],
+      dateFormat: 'DD/MM/YYYY',
+      monthFormat: 'MM/YYYY',
+      dateFormatList: ['DD/MM/YYYY', 'DD/MM/YY'],
       lists: [1, 2, 3, 4],
       items: [1, 2, 3, 4],
       data,
-      columns,
-    };
+      columns
+    }
   },
   methods: {
     moment,
-    handleChange(val) {
-      console.log(val);
-    },
-  },
-};
+    handleChange (val) {
+      console.log(val)
+    }
+  }
+}
 </script>
 <style lang="scss">
 .bg-footer {

@@ -27,8 +27,7 @@
               <a-timeline>
                 <a-timeline-item>
                   <span class="text-danger pr-1">*</span>External Name
-                  <span class="font-weight-bold pl-2">8hr7to15</span
-                  ><a-icon type="question-circle" class="pl-4 text-dark" />
+                  <span class="font-weight-bold pl-2">8hr7to15</span><a-icon type="question-circle" class="pl-4 text-dark" />
                 </a-timeline-item>
                 <a-timeline-item class="pl-2">
                   Search Field
@@ -106,44 +105,44 @@
 <script>
 const columns = [
   {
-    title: "Day",
-    dataIndex: "day",
-    key: "day",
+    title: 'Day',
+    dataIndex: 'day',
+    key: 'day'
   },
   {
-    title: "Planned Hours And Minutes (hh:mm)",
-    dataIndex: "hours",
-    key: "hours",
+    title: 'Planned Hours And Minutes (hh:mm)',
+    dataIndex: 'hours',
+    key: 'hours'
   },
   {
-    title: "Planned Hours (Decimal)",
-    dataIndex: "planedHours",
-    key: "planedHours",
-  },
-];
+    title: 'Planned Hours (Decimal)',
+    dataIndex: 'planedHours',
+    key: 'planedHours'
+  }
+]
 
-const data = [];
+const data = []
 for (let i = 0; i < 5; i++) {
   data.push({
     key: i,
     day: i + 1,
-    hours: "08:00",
-    planedHours: "8",
-  });
+    hours: '08:00',
+    planedHours: '8'
+  })
 }
 export default {
-  data() {
+  data () {
     return {
       data,
-      columns,
-    };
+      columns
+    }
   },
   methods: {
-    handleChange(val) {
-      console.log(val);
-    },
-  },
-};
+    handleChange (val) {
+      console.log(val)
+    }
+  }
+}
 </script>
 <style>
 .ant-timeline-item-tail {

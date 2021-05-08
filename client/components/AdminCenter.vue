@@ -1,7 +1,7 @@
 <template>
   <div class="theme">
-  <ColorModePicker />
-</div>
+    <ColorModePicker />
+  </div>
   <!-- <div>
     <div class="row">
       <div class="col-6">
@@ -9,16 +9,15 @@
       </div>
     </div>
   </div> -->
-  
 </template>
 <script>
 import ColorModePicker from '@/components/ColorModePicker'
 
 export default {
   components: {
-      ColorModePicker
-    }
-};
+    ColorModePicker
+  }
+}
 </script>
 <style>
 .theme {
