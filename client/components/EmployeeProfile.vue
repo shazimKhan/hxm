@@ -53,16 +53,6 @@
               </a-col>
             </a-row>
           </a-card>
-
-          // form
-          <a-card>
-            <a-row>
-              <a-col :span="12">
-                <a-range-picker @change="onChange" open="true">
-                </a-range-picker>
-              </a-col>
-            </a-row>
-          </a-card>
         </div>
       </a-tab-pane>
       <a-tab-pane key="5" tab="TIME">
@@ -80,9 +70,6 @@
 <script>
 export default {
   methods: {
-    onChange (date, dateString) {
-      console.log(date, dateString)
-    },
     callback (key) {
       console.log(key)
     }

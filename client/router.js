@@ -17,6 +17,8 @@ const routes = [
 
   { path: '/', name: 'admin', component: page('admin.vue') },
   { path: '/time-sheet', name: 'admin', component: page('time-sheet/index.vue') },
+  { path: '/create-absence', name: 'admin', component: page('create-absence/index.vue') },
+
   {
     path: '/settings',
     component: page('settings/index.vue'),
