@@ -16,6 +16,7 @@ const routes = [
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
 
   { path: '/', name: 'admin', component: page('admin.vue') },
+  { path: '/time-sheet', name: 'admin', component: page('time-sheet/index.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),
