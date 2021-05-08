@@ -37,13 +37,13 @@
       <a-tab-pane key="4" tab="PAYROLL">
         <div class="payroll">
           <a-card title="Time Sheet" size="small">
-             <p>No time recording profile is assigned to job information</p>
-                <a href="#">Go to Time Sheet </a>
+            <p>No time recording profile is assigned to job information</p>
+            <a href="#">Go to Time Sheet </a>
             <a-row class="py-4">
               <a-col :span="12">
-               <h5>Upcomming Time Off</h5>
-               <p>There are no upcoming absences</p>
-               <a href="#" >Go to Time Off</a>
+                <h5>Upcomming Time Off</h5>
+                <p>There are no upcoming absences</p>
+                <a href="#">Go to Time Off</a>
               </a-col>
               <a-col :span="12">
                 <p>Time Off Balances</p>
@@ -54,11 +54,12 @@
             </a-row>
           </a-card>
 
-// form
+          // form
           <a-card>
             <a-row>
               <a-col :span="12">
-kkcks
+                <a-range-picker @change="onChange" open="true">
+                </a-range-picker>
               </a-col>
             </a-row>
           </a-card>
@@ -78,8 +79,13 @@ kkcks
 </template>
 <script>
 export default {
-  callback (key) {
-    console.log(key)
+  methods: {
+    onChange (date, dateString) {
+      console.log(date, dateString)
+    },
+    callback (key) {
+      console.log(key)
+    }
   }
 }
 </script>
