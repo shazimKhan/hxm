@@ -84,7 +84,10 @@
                     xs: 24,
                   }"
                 >
-                  <a-date-picker v-model="createForm.start_date" style="width: 100%" />
+                  <a-date-picker
+                    v-model="createForm.start_date"
+                    style="width: 100%"
+                  />
                 </a-form-model-item>
               </a-col>
               <a-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
@@ -108,7 +111,10 @@
                     xs: 24,
                   }"
                 >
-                  <a-date-picker v-model="createForm.end_date" style="width: 100%" />
+                  <a-date-picker
+                    v-model="createForm.end_date"
+                    style="width: 100%"
+                  />
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -134,13 +140,13 @@
                     xs: 24,
                   }"
                 >
-                  <a-select v-model="createForm.requesting" default-value="jack" style="width: 100%">
-                    <a-select-option value="jack">
-                      1 day
-                    </a-select-option>
-                    <a-select-option value="lucy">
-                      Lucy
-                    </a-select-option>
+                  <a-select
+                    v-model="createForm.requesting"
+                    default-value="jack"
+                    style="width: 100%"
+                  >
+                    <a-select-option value="jack"> 1 day </a-select-option>
+                    <a-select-option value="lucy"> Lucy </a-select-option>
                     <a-select-option value="Yiminghe">
                       yiminghe
                     </a-select-option>
@@ -198,9 +204,7 @@
                     xs: 24,
                   }"
                 >
-                  <a-textarea v-model="createForm.comment"
-                              :rows="4"
-                  />
+                  <a-textarea v-model="createForm.comment" :rows="4" />
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -210,7 +214,7 @@
                   <a-button type="primary" @click="handleSave">
                     Submit
                   </a-button>
-                  <a-button class=" mt-2" @click="handleCancel">
+                  <a-button class="mt-2" @click="handleCancel">
                     Cancel
                   </a-button>
                 </div>
@@ -225,36 +229,36 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       loading: false,
       createForm: {
-        time_type: '',
-        balance: '0 days',
-        start_date: 'May 4, 2021',
-        end_date: 'May 4, 2021',
-        requesting: '1 day',
-        retruning: 'May 5, 2021',
-        comment: ''
-      }
-    }
+        time_type: "",
+        balance: "0 days",
+        start_date: "May 4, 2021",
+        end_date: "May 4, 2021",
+        requesting: "1 day",
+        retruning: "May 5, 2021",
+        comment: "",
+      },
+    };
   },
   methods: {
-    async handleSave () {
-      this.loading = true
-      await this.createForm()
-      this.loading = false
+    async handleSave() {
+      this.loading = true;
+      // await this.createForm()
+      this.loading = false;
     },
 
-    handleCancel (e) {
-      this.$refs.createForm.resetFields()
-    }
-  }
-}
+    handleCancel(e) {
+      this.$refs.createForm.resetFields();
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .ant-form-item {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 </style>
