@@ -25,9 +25,7 @@
       </a-descriptions>
     </template> -->
     <a-tabs default-active-key="4" @change="callback">
-      <a-tab-pane key="1" tab="ME">
-        ME
-      </a-tab-pane>
+      <a-tab-pane key="1" tab="ME"> ME </a-tab-pane>
       <a-tab-pane key="2" tab="EMPLOYMENT" force-render>
         Content of Tab Pane 2
       </a-tab-pane>
@@ -43,24 +41,20 @@
               <a-col :span="12">
                 <h5>Upcomming Time Off</h5>
                 <p>There are no upcoming absences</p>
-                <a href="#">Go to Time Off</a>
+                <nuxt-link to="/time-sheet">Go to Time Off</nuxt-link>
               </a-col>
               <a-col :span="12">
                 <p>Time Off Balances</p>
-                <p><strong> 0 days </strong>  vacation</p>
-                <p><strong> 0 days </strong>  sickness</p>
-                <p><strong> 00:00 hours </strong>  Comp Time</p>
+                <p><strong> 0 days </strong> vacation</p>
+                <p><strong> 0 days </strong> sickness</p>
+                <p><strong> 00:00 hours </strong> Comp Time</p>
               </a-col>
             </a-row>
           </a-card>
         </div>
       </a-tab-pane>
-      <a-tab-pane key="5" tab="TIME">
-        Content of Tab Pane 3
-      </a-tab-pane>
-      <a-tab-pane key="5" tab="bENEFITS">
-        Content of Tab Pane 3
-      </a-tab-pane>
+      <a-tab-pane key="5" tab="TIME"> Content of Tab Pane 3 </a-tab-pane>
+      <a-tab-pane key="5" tab="bENEFITS"> Content of Tab Pane 3 </a-tab-pane>
       <a-tab-pane key="5" tab="TALENT PROFILE">
         Content of Tab Pane 3
       </a-tab-pane>
@@ -70,11 +64,11 @@
 <script>
 export default {
   methods: {
-    callback (key) {
-      console.log(key)
-    }
-  }
-}
+    callback(key) {
+      console.log(key);
+    },
+  },
+};
 </script>
 <style lang="scss">
 .ant-tabs-bar {

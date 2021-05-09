@@ -8,42 +8,51 @@
               <a-range-picker :open="true" @change="onChange" />
             </a-col>
           </a-row>
-          <a-row :gutter="[16,16]">
+          <a-row :gutter="[16, 16]">
             <a-col :span="3" class="today">
-              <div class="box" /><span>Today</span>
+              <div class="box" />
+              <span>Today</span>
             </a-col>
             <a-col :span="5" class="today">
-              <div class="box" /> Working Day
+              <div class="box" />
+              Working Day
             </a-col>
             <a-col :span="6" class="today">
-              <div class="box" /> Non-working Day
+              <div class="box" />
+              Non-working Day
             </a-col>
             <a-col :span="4" class="today">
-              <div class="box green" /> Approved
+              <div class="box green" />
+              Approved
             </a-col>
             <a-col :span="6" class="today">
-              <div class="box yellow" />  Pending
+              <div class="box yellow" />
+              Pending
             </a-col>
           </a-row>
           <a-row :gutter="16">
             <a-col :span="4" class="today">
-              <div class="box" /> Holiday
+              <div class="box" />
+              Holiday
             </a-col>
             <a-col :span="7" class="today red">
-              <div class="box red" /> Cancellation Pending
+              <div class="box red" />
+              Cancellation Pending
             </a-col>
             <a-col :span="4" class="today">
-              <div class="box blue" /> Selected
+              <div class="box blue" />
+              Selected
             </a-col>
           </a-row>
         </a-col>
         <a-col :span="12">
           <h5>Balances</h5>
-          <p>There is no favorite time type configured with the <br> associated time account for this user</p>
+          <p>
+            There is no favorite time type configured with the <br />
+            associated time account for this user
+          </p>
           <a href="#"> Show All </a>
-          <h5 class="pt-4">
-            Upcoming Time Off
-          </h5>
+          <h5 class="pt-4">Upcoming Time Off</h5>
           <a-table
             :columns="columns"
             :data-source="data"
@@ -56,7 +65,7 @@
           </div>
           <div class="create-btn text-right">
             <a-button type="primary">
-              Create Absence
+              <nuxt-link to="/create-absence"> Create Absence </nuxt-link>
             </a-button>
           </div>
         </a-col>
@@ -68,79 +77,79 @@
 <script>
 const columns = [
   {
-    title: 'No Events',
-    dataIndex: 'no-events',
-    key: 'no-events',
-    width: 180
+    title: "No Events",
+    dataIndex: "no-events",
+    key: "no-events",
+    width: 180,
   },
   {
-    title: '',
-    dataIndex: 'event',
-    key: 'event',
-    width: 120
+    title: "",
+    dataIndex: "event",
+    key: "event",
+    width: 120,
   },
   {
-    title: '',
-    dataIndex: 'holiday',
-    key: 'holiday',
-    width: 250
+    title: "",
+    dataIndex: "holiday",
+    key: "holiday",
+    width: 250,
   },
   {
-    title: '',
-    dataIndex: 'planedHours',
-    key: 'planedHours',
-    width: 120
-  }
-]
+    title: "",
+    dataIndex: "planedHours",
+    key: "planedHours",
+    width: 120,
+  },
+];
 
-const data = []
+const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({
-    key: i
-  })
+    key: i,
+  });
 }
 export default {
-  data () {
+  data() {
     return {
       data,
-      columns
-    }
+      columns,
+    };
   },
   methods: {
-    onChange (date, dateString) {
-      console.log(date, dateString)
-    }
-  }
-}
+    onChange(date, dateString) {
+      console.log(date, dateString);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .calendar {
-      min-height: 315px;
+  min-height: 315px;
 }
 .ant-calendar-range .ant-calendar-input-wrap {
   display: none;
 }
-.today{
+.today {
   display: inline-flex;
   align-items: center;
-.box {
-  width: 15px;
-  height: 15px;
-  border: 1px solid #eee;
-  margin-right: 7px;
-}
- .green {
+  .box {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    margin-right: 7px;
+  }
+  .green {
     background-color: green;
-}
-.red {
-  background-color: red;
-}
-.blue {
-  background-color: blue;
-}
-.yellow {
-  background-color: yellow;
-}
+  }
+  .red {
+    background-color: red;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
 }
 </style>
