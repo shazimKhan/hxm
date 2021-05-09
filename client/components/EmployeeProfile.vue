@@ -32,7 +32,7 @@
       <a-tab-pane key="3" tab="COMPENSATION">
         Content of Tab Pane 3
       </a-tab-pane>
-      <a-tab-pane key="4" tab="PAYROLL">
+      <a-tab-pane key="5" tab="TIME"> 
         <div class="payroll">
           <a-card title="Time Sheet" size="small">
             <p>No time recording profile is assigned to job information</p>
@@ -45,17 +45,16 @@
               </a-col>
               <a-col :span="12">
                 <p>Time Off Balances</p>
-                <p><strong> 0 days </strong> vacation</p>
-                <p><strong> 0 days </strong> sickness</p>
+                <p><strong> 0 days </strong> Vacation</p>
+                <p><strong> 0 days </strong> Sickness</p>
                 <p><strong> 00:00 hours </strong> Comp Time</p>
               </a-col>
             </a-row>
           </a-card>
         </div>
       </a-tab-pane>
-      <a-tab-pane key="5" tab="TIME"> Content of Tab Pane 3 </a-tab-pane>
-      <a-tab-pane key="5" tab="bENEFITS"> Content of Tab Pane 3 </a-tab-pane>
-      <a-tab-pane key="5" tab="TALENT PROFILE">
+      <a-tab-pane key="6" tab="BENEFITS"> Content of Tab Pane 3 </a-tab-pane>
+      <a-tab-pane key="7" tab="TALENT PROFILE">
         Content of Tab Pane 3
       </a-tab-pane>
     </a-tabs>
