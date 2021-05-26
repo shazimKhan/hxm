@@ -11,10 +11,11 @@
             <a-row class="py-4">
               <a-col :span="2">
                 <!-- <a-avatar :size="100" icon="user" />  -->
-                <a-avatar :size="100" style="backgroundColor:#87d068" icon="user" />
+                <a-avatar :size="100" style="backgroundColor:#93E5E6 " icon="user" />
               </a-col>
+
               <a-col :span="5">
-                <strong>Khubaib Ahmad</strong>
+                <h3>Khubaib Ahmad</h3>
                 <br>
                 (Admin)
                 <br>
@@ -23,6 +24,8 @@
                 Bussiness Phone: <strong>+923485305011</strong>
                 <br>
                 khubaibahmadmughal@gmail.com
+                <br>
+                <h3> <a href="https://www.facebook.com" > <a-icon type="facebook"  /></a> <a href="https://www.linkedin.com/signup"> <a-icon type="linkedin" /></a></h3>
               </a-col>
             </a-row>
           </a-card>
@@ -38,37 +41,40 @@
       <a-tab-pane key="3" tab="COMPENSATION">
       
       </a-tab-pane>
-      <a-tab-pane key="4" tab="TIME"> 
+      <a-tab-pane key="4" tab="TIME" >
+        <!-- <a href="#" v-scroll-to="'#4'">
+        </a> -->
+        <router-link to="#" v-scroll-to="'#4'">
+    
+</router-link>
       </a-tab-pane>
       <a-tab-pane key="5" tab="BENEFITS">  </a-tab-pane>
       <a-tab-pane key="6" tab="PROXY">
       </a-tab-pane>
     </a-tabs>
-<div>
+  <div>
     
-    <a-card title="Personal Information" :bordered="true" >
+    <a-card title="Personal Information" :bordered="true" id="1" >
       <p>Card content</p>
       <p>Card content</p>
       <p>Card content</p>
     </a-card>
   <br>
-    <a-card title="Employment" :bordered="false" >
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>Card content</p>
-    </a-card>
-<br>
-    <a-card title="Compensation" :bordered="false" >
+    <a-card title="Employment" :bordered="false" id="2">
       <p>Card content</p>
       <p>Card content</p>
       <p>Card content</p>
     </a-card>
   <br>
-<a-card title="Time Sheet" size="small">
-            <p>No time recording profile is assigned to job information</p>
-            <a href="#">Go to Time Sheet </a>
-            <a-row class="py-4">
-              <a-col :span="5">
+    <a-card title="Compensation" :bordered="false" id="3" >
+      <p>Card content</p>
+      <p>Card content</p>
+      <p>Card content</p>
+    </a-card>
+  <br>
+          <a-card title="Time Sheet" size="small" id="4">
+            <a-row class="time-card">
+              <a-col :span="6">
                 <h5>Time Off</h5>
               </a-col>
               <a-col :span="8">
@@ -85,45 +91,39 @@
             </a-row>
           </a-card>
   <br>
-    <a-card title="Benefits" :bordered="false" >
+    <a-card title="Benefits" :bordered="false" id="5">
       <p>Card content</p>
       <p>Card content</p>
       <p>Card content</p>
     </a-card>
   <br> 
-  <a-card title="Proxy" size="small">
-          <a-row class="py-4">
+      <a-card title="Proxy" size="small" id="6">
+        <a-row class="py-4">
            <a-col :span="12">
                 <nuxt-link to="/super-visor">Click here!</nuxt-link>
            </a-col>
-              
-          </a-row>
-          </a-card> 
-</div>
+        </a-row>
+      </a-card> 
 
-    <!-- <div class="employee">
-      <h1>Hello World</h1>
-        <h2> Hello World</h2>
-        <h2> Hello World</h2>
-        <h2> Hello World</h2>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h2> Hello World</h2><h2> Hello World</h2><h2> Hello World</h2><h2> Hello World</h2>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-    </div> -->
   </div>
-</template>
-<script>
 
+</div>
+</template>
+
+<script>
+// import VueScrollTo from 'vue-scrollto'
 export default {
+  // components: {
+  //   use(VueScrollTo)
+  // },
   methods: {
     callback(key) {
       console.log(key);
     },
   },
+  
 };
+
 </script>
 <style lang="scss">
 .ant-tabs-bar {

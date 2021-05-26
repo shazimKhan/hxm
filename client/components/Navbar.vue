@@ -9,7 +9,7 @@
           {{ appName }}
           <nuxt-link to="/admin-center"></nuxt-link>
         </router-link>
-
+        <div v-if="user" class="nav-item dropdown">
         <a-col :span="4">
                 <a-select
                   :default-value="moduleList"
@@ -30,6 +30,8 @@
                   </a-select-option>
                 </a-select>
               </a-col>
+        </div>
+
         <div id="navbarToggler" class="collapse navbar-collapse pl-5">
           <ul class="navbar-nav ml-auto">
             <!-- Authenticated -->
