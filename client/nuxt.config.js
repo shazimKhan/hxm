@@ -53,7 +53,17 @@ module.exports = {
   ],
 
   build: {
-    extractCSS: true
+    extractCSS: true,
+    babel: {
+      plugins: [
+        [
+          '@babel/plugin-proposal-private-methods',
+          {
+            loose: true,
+          },
+        ],
+      ],
+    },
   },
   buildModules: [
     '@nuxtjs/svg','@nuxtjs/color-mode'

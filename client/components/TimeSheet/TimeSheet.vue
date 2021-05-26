@@ -1,6 +1,10 @@
 <template>
   <div class="time-sheet">
     <a-card>
+      <a-card class="title">
+        <h4>People Profile/Time Off</h4> 
+        <h5>Time Off</h5>
+      </a-card>
       <a-row :gutter="24">
         <a-col :span="12">
           <a-row>
@@ -13,14 +17,6 @@
               <div class="box" />
               <span>Today</span>
             </a-col>
-            <a-col :span="5" class="today">
-              <div class="box" />
-              Working Day
-            </a-col>
-            <a-col :span="6" class="today">
-              <div class="box" />
-              Non-working Day
-            </a-col>
             <a-col :span="4" class="today">
               <div class="box green" />
               Approved
@@ -31,8 +27,8 @@
             </a-col>
           </a-row>
           <a-row :gutter="16">
-            <a-col :span="4" class="today">
-              <div class="box" />
+            <a-col :span="4" class="today black">
+              <div class="box black" />
               Holiday
             </a-col>
             <a-col :span="7" class="today red">
@@ -124,6 +120,10 @@ export default {
 </script>
 
 <style lang="scss">
+.title
+{
+  background-color: rgb(204, 207, 207);
+}
 .calendar {
   min-height: 315px;
 }

@@ -7,53 +7,30 @@
           class="navbar-brand text-white"
         >
           {{ appName }}
+          <nuxt-link to="/admin-center"></nuxt-link>
         </router-link>
 
-        <button
-          :aria-label="$t('toggle_navigation')"
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarToggler"
-          aria-controls="navbarToggler"
-          aria-expanded="false"
-        >
-          <span class="navbar-toggler-icon" />
-        </button>
+        <a-col :span="4">
+                <a-select
+                  :default-value="moduleList"
+                  style="width: 200px"
+                  @change="getModuleValue"
+                >
+                  <a-select-option value="admin-center">
+                    Admin Center
+                  </a-select-option>
+                  <a-select-option value="employee-profile">
+                    Employee profile
+                  </a-select-option>
+                  <a-select-option value="work-schedule">
+                    Work Schedule
+                  </a-select-option>
+                  <a-select-option value="leave-management">
+                    Leave Management
+                  </a-select-option>
+                </a-select>
+              </a-col>
         <div id="navbarToggler" class="collapse navbar-collapse pl-5">
-          <ul class="navbar-nav">
-            <!-- <locale-dropdown /> -->
-            <li v-if="user" class="nav-item dropdown">
-              <!-- <a
-              class="nav-link dropdown-toggle text-white"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            > -->
-              <!-- <a-select
-                :default-value="moduleList"
-                style="width: 200px"
-                class="bg-info"
-              >
-                <a-select-option value="admin-center"
-                  >Admin Center</a-select-option
-                >
-                <a-select-option value="employee-profile"
-                  >Employee profile</a-select-option
-                >
-                <a-select-option value="work-schedule"
-                  >Work Schedule</a-select-option
-                >
-                <a-select-option value="leave-management"
-                  >Leave Management</a-select-option
-                >
-              </a-select> -->
-              <!-- </a> -->
-            </li>
-          </ul>
-
           <ul class="navbar-nav ml-auto">
             <!-- Authenticated -->
             <li v-if="user" class="nav-item dropdown">
@@ -73,8 +50,7 @@
               <div class="dropdown-menu">
                 <router-link
                   :to="{ name: 'settings.profile' }"
-                  class="dropdown-item pl-3"
-                >
+                  class="dropdown-item pl-3">
                   <fa icon="cog" fixed-width />
                   Setting
                 </router-link>
@@ -86,26 +62,13 @@
                 </a>
               </div>
             </li>
-            <!-- Guest -->
-            <template v-else>
-              <!-- <li class="nav-item">
-              <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
-                {{ $t('login') }}
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link :to="{ name: 'register' }" class="nav-link" active-class="active">
-                {{ $t('register') }}
-              </router-link>
-            </li> -->
-            </template>
           </ul>
         </div>
       </div>
     </nav>
 
-    <a-row>
-      <li v-if="user" class="nav-item dropdown">
+    <!-- <a-row>
+      <div v-if="user" class="nav-item dropdown">
         <a-col :span="24" class=" ">
           <a-page-header
             style="border: 1px solid rgb(235, 237, 240)"
@@ -127,6 +90,9 @@
                   <a-select-option value="employee-profile">
                     Employee profile
                   </a-select-option>
+                   <a-select-option value="supervisor-profile">
+                    Supervisor profile
+                  </a-select-option> 
                   <a-select-option value="work-schedule">
                     Work Schedule
                   </a-select-option>
@@ -174,8 +140,7 @@
                     <a-select
                       default-value="no"
                       style="width: 100%"
-                      @change="handleChange"
-                    >
+                      @change="handleChange">
                       <a-icon slot="suffixIcon" type="search" />
                       <a-select-option value="no">
                         No Selection
@@ -186,15 +151,16 @@
               </a-col>
             </a-row>
 
-          <!-- <template slot="extra">
+          <template slot="extra">
             <a-button key="3"> Operation </a-button>
             <a-button key="2"> Operation </a-button>
             <a-button key="1" type="primary"> Primary </a-button>
-          </template> -->
+          </template> 
           </a-page-header>
         </a-col>
-      </li>
-    </a-row>
+      </div>
+    </a-row> -->
+  
   </div>
 </template>
 

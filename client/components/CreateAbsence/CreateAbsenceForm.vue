@@ -2,13 +2,13 @@
   <div class="create-form">
     <a-card>
       <a-row>
-        <a-col :span="14" />
+        <a-col :span="7" />
         <a-col :span="10">
           <a-form-model
             ref="createForm"
             :hide-required-mark="true"
             :model="createForm"
-            label-align="left"
+            label-align="center"
           >
             <a-row :gutter="16">
               <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
@@ -31,8 +31,23 @@
                     sm: 24,
                     xs: 24,
                   }"
-                >
-                  <a-input v-model="createForm.time_type" />
+                  >
+                  <a-select
+                    v-model="createForm.time_type"
+                    default-value="default"
+                    style="width: 100%"
+                  >
+                
+                    <a-select-option value="1"> Sickness </a-select-option>
+                    <a-select-option value="2"> Casual</a-select-option>
+                    <a-select-option value="3"> Public</a-select-option>
+                    <a-select-option value="4"> Religious</a-select-option>
+                    <a-select-option value="5"> Maternity</a-select-option>
+                    <a-select-option value="6"> Paternity</a-select-option>
+                    <a-select-option value="7"> Annual</a-select-option>
+                  </a-select>
+
+                  <!-- <a-input v-model="createForm.time_type" /> -->
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -146,10 +161,8 @@
                     style="width: 100%"
                   >
                     <a-select-option value="jack"> 1 day </a-select-option>
-                    <a-select-option value="lucy"> Lucy </a-select-option>
-                    <a-select-option value="Yiminghe">
-                      yiminghe
-                    </a-select-option>
+                    <a-select-option value="lucy"> 1 week</a-select-option>
+                  
                   </a-select>
                 </a-form-model-item>
               </a-col>
@@ -174,7 +187,11 @@
                     xs: 24,
                   }"
                 >
-                  <a-input v-model="createForm.retruning" />
+                <a-date-picker
+                    v-model="createForm.retruning"
+                    style="width: 100%"
+                  />
+                  <!-- <a-input v-model="createForm.retruning" /> -->
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -215,8 +232,9 @@
                     Submit
                   </a-button>
                   <a-button class="mt-2" @click="handleCancel">
-                    Cancel
+                    <nuxt-link to="/time-sheet"> Cancel</nuxt-link>
                   </a-button>
+                  
                 </div>
               </a-col>
             </a-row>
@@ -235,10 +253,10 @@ export default {
       createForm: {
         time_type: "",
         balance: "0 days",
-        start_date: "May 4, 2021",
-        end_date: "May 4, 2021",
-        requesting: "1 day",
-        retruning: "May 5, 2021",
+        start_date: "",
+        end_date: "",
+        requesting: "",
+        retruning: "",
         comment: "",
       },
     };
