@@ -9,13 +9,14 @@
       <div class="info">
           <a-card class="info">
             <a-row class="py-4">
-              <a-col :span="2">
+              <a-col :span="3">
                 <!-- <a-avatar :size="100" icon="user" />  -->
-                <a-avatar :size="100" style="backgroundColor:#93E5E6 " icon="user" />
+                <a-avatar :size="160" style="backgroundColor:#93E5E6 " icon="user" />
               </a-col>
 
               <a-col :span="5">
                 <h3>Khubaib Ahmad</h3>
+                <h6>
                 <br>
                 (Admin)
                 <br>
@@ -24,8 +25,9 @@
                 Bussiness Phone: <strong>+923485305011</strong>
                 <br>
                 khubaibahmadmughal@gmail.com
+                </h6>
                 <br>
-                <h3> <a href="https://www.facebook.com" > <a-icon type="facebook"  /></a> <a href="https://www.linkedin.com/signup"> <a-icon type="linkedin" /></a></h3>
+                <h3> <a href="https://www.facebook.com"> <a-icon type="facebook"  /></a> <a href="https://www.linkedin.com/signup"> <a-icon type="linkedin" /></a></h3>
               </a-col>
             </a-row>
           </a-card>
@@ -44,9 +46,24 @@
       <a-tab-pane key="4" tab="TIME" >
         <!-- <a href="#" v-scroll-to="'#4'">
         </a> -->
-        <router-link to="#" v-scroll-to="'#4'">
-    
-</router-link>
+         <a-card title="Time Sheet" size="small" id="4">
+            <a-row class="time-card">
+              <a-col :span="6">
+                <h5>Time Off</h5>
+              </a-col>
+              <a-col :span="8">
+                <h5>Upcomming Time Off</h5>
+                <p>There are no upcoming absences</p>
+                <nuxt-link to="/time-sheet">Go to Time Off</nuxt-link>
+              </a-col>
+              <a-col :span="10">
+                <p>Time Off Balances</p>
+                <p><strong> 0 days </strong> Vacation</p>
+                <p><strong> 0 days </strong> Sickness</p>
+                <p><strong> 00:00 hours </strong> Comp Time</p>
+              </a-col>
+            </a-row>
+          </a-card>
       </a-tab-pane>
       <a-tab-pane key="5" tab="BENEFITS">  </a-tab-pane>
       <a-tab-pane key="6" tab="PROXY">
@@ -97,10 +114,10 @@
       <p>Card content</p>
     </a-card>
   <br> 
-      <a-card title="Proxy" size="small" id="6">
+      <a-card title="Approval" size="small" id="6">
         <a-row class="py-4">
            <a-col :span="12">
-                <nuxt-link to="/super-visor">Click here!</nuxt-link>
+                <nuxt-link to="/leave">Click here!</nuxt-link>
            </a-col>
         </a-row>
       </a-card> 
@@ -111,11 +128,8 @@
 </template>
 
 <script>
-// import VueScrollTo from 'vue-scrollto'
 export default {
-  // components: {
-  //   use(VueScrollTo)
-  // },
+  
   methods: {
     callback(key) {
       console.log(key);

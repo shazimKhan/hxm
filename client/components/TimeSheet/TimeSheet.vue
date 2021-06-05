@@ -5,6 +5,7 @@
         <h4>People Profile/Time Off</h4> 
         <h5>Time Off</h5>
       </a-card>
+      <a-divider></a-divider>
       <a-row :gutter="24">
         <a-col :span="12">
           <a-row>

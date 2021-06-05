@@ -18,15 +18,21 @@
     "ant-design-vue": "^1.7.4",
     "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.3",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "dotenv": "^8.2.0",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
+    "moment": "^2.29.1",
     "nuxt": "^2.15.4",
     "popper.js": "^1.16.1",
     "sweetalert2": "^10.10.4",
     "vform": "^1.0.1",
-    "vue-i18n": "^8.22.2"
+    "vue": "^2.6.12",
+    "vue-horizontal-calendar": "^0.8.2",
+    "vue-i18n": "^8.22.2",
+    "vue-scrollto": "^2.20.0",
+    "vuejs-datepicker": "^1.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

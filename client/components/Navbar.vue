@@ -44,10 +44,11 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <img
+                <!-- <img
                   :src="user.photo_url"
                   class="rounded-circle profile-photo mr-1"
-                >
+                > -->
+                <a-avatar :size="40" icon="user" />
               </a>
               <div class="dropdown-menu">
                 <router-link
