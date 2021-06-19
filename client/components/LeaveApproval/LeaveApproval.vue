@@ -147,8 +147,12 @@
                 </a-row>
                
                 <a-divider dashed/>
-               
-            <VueHorizontalCalendar lang="en" :swipeSpace="14"/>
+              <a-row>
+                <a-col :span="10" :offset="4">
+                  <VueHorizontalCalendar  style="width:410px;margin: 0 auto;"  :resizeable="false" lang="en" :swipeSpace="14"/>
+                </a-col>
+              </a-row> 
+     
             <a-table :columns="columns" :data-source="data">
               <a slot="profile" slot-scope="text">
                  <a-avatar :size="35" icon="user" />
@@ -395,6 +399,10 @@ export default {
 }
 .calender-col{
   width:unset;
+}
+.horizontal-calendar{
+  width: 80%;
+  margin-left: 192px;
 }
 </style>
 
