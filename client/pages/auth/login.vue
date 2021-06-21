@@ -9,70 +9,87 @@
                  <b-form    class="form"    @submit.prevent="login" @keydown="form.onKeydown($event)">
                    <h1>Login</h1>
                    <p class="text-muted">Sign In to your account</p>
-                   
+                     
                       <!-- Email -->
                       <div class="form-group row">
-                        <label class="col-md-3 col-form-label text-md-right">{{
-                          $t("email")
-                        }}</label>
-                        <div class="col-md-7">
-                          <input
+                         <b-input-group class="mb-3">
+                          <b-input-group-prepend>
+                            <b-input-group-text><a-icon type="user" > </a-icon></b-input-group-text>
+                          </b-input-group-prepend>
+                          <b-form-input
                             v-model="form.email"
-                            :class="{ 'is-invalid': form.errors.has('email') }"
-                            type="email"
-                            name="email"
-                            class="form-control"
-                          />
-                          <has-error :form="form" field="email" />
-                        </div>
+                                  :class="{ 'is-invalid': form.errors.has('email') }"
+                                  type="email"
+                                  name="email"
+                                  class="form-control"
+                            placeholder="Enter your email"
+                      
+                            />
+                            </b-input-group>
                       </div>
 
                       <!-- Password -->
                       <div class="form-group row">
-                        <label class="col-md-3 col-form-label text-md-right">{{
-                          $t("password")
-                        }}</label>
-                        <div class="col-md-7">
-                          <input
-                            v-model="form.password"
+                        <b-input-group class="mb-4">
+                    <b-input-group-prepend
+                      ><b-input-group-text
+                        ><a-icon type="lock" /></b-input-group-text
+                    ></b-input-group-prepend>
+                    <b-form-input
+                      v-model="form.password"
                             :class="{ 'is-invalid': form.errors.has('password') }"
                             type="password"
                             name="password"
                             class="form-control"
-                          />
-                          <has-error :form="form" field="password" />
-                        </div>
+                      placeholder="Enter your password"
+                
+                    />
+                  </b-input-group>
                       </div>
                     
 
                     <b-row>
                       <!-- Remember Me -->
                         <div class="col-md-3" />
-                          <b-col :span="5">
+                          <!-- <b-col :span="5">
                           <checkbox v-model="remember" name="remember">
                             {{ $t("remember_me") }}
                           </checkbox>
+                          </b-col> -->
+                          
+                    </b-row>
+                    <b-row>
+                      <div class="form-group row">
+                          <!-- Submit Button -->
+                          <b-col :span="10">
+                          <!-- <a-button 
+                            type="primary" 
+                            block
+                            :loading="form.busy"
+                            >
+                             {{ $t("Login") }}
+                            </a-button> -->
+                          
+                          <v-button 
+                          large
+                          rounded
+                          :loading="form.busy"
+                          
+                          >
+                            {{ $t("Login") }}
+                          </v-button> 
+                          <!-- GitHub Login Button -->
+                          <login-with-github />
                           </b-col>
-                          <b-col>
+                          <b-col :span="6">
+                            <b-row :span="10">
                           <router-link
                             :to="{ name: 'password.request' }"
                             class="small ml-auto my-auto">
                             {{ $t("forgot_password") }}
                           </router-link>
+                          </b-row>
                           </b-col>
-                    </b-row>
-                    <b-row>
-                      <div class="form-group row">
-                          <!-- Submit Button -->
-                          <v-button 
-                          large
-                          :loading="form.busy"
-                          rounded
-                          >
-                            {{ $t("Login") }}
-                          </v-button>
-                          <!-- GitHub Login Button -->
-                          <login-with-github />
                       </div>
                     </b-row>
                   </b-form>
