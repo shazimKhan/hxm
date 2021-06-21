@@ -46,24 +46,6 @@
       <a-tab-pane key="4" tab="TIME" >
         <!-- <a href="#" v-scroll-to="'#4'">
         </a> -->
-         <a-card title="Time Sheet" size="small" id="4">
-            <a-row class="time-card">
-              <a-col :span="6">
-                <h5>Time Off</h5>
-              </a-col>
-              <a-col :span="8">
-                <h5>Upcomming Time Off</h5>
-                <p>There are no upcoming absences</p>
-                <nuxt-link to="/time-sheet">Go to Time Off</nuxt-link>
-              </a-col>
-              <a-col :span="10">
-                <p>Time Off Balances</p>
-                <p><strong> 0 days </strong> Vacation</p>
-                <p><strong> 0 days </strong> Sickness</p>
-                <p><strong> 00:00 hours </strong> Comp Time</p>
-              </a-col>
-            </a-row>
-          </a-card>
       </a-tab-pane>
       <a-tab-pane key="5" tab="BENEFITS">  </a-tab-pane>
       <a-tab-pane key="6" tab="PROXY">

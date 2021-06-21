@@ -8,10 +8,10 @@
         <component :is="`icon-${color}`" :class="getClasses(color)" @click="$colorMode.preference = color" />
         {{ color }}
       </li>
-      <ColorScheme placeholder="..." tag="span">
+      <!-- <ColorScheme placeholder="..." tag="span">
         Color mode: <b>{{ $colorMode.preference }}</b>
         <span v-if="$colorMode.preference === 'system'">(<i>{{ $colorMode.value }}</i> mode detected)</span>
-      </ColorScheme>
+      </ColorScheme> -->
     </ul>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      colors: ['light', 'dark', 'sepia']
+      colors: ['light', 'dark']
     }
   },
   methods: {

@@ -64,10 +64,10 @@
             />
         </a-card>
       </a-col>
-      <a-col :span="10">
+      <a-col :span="5">
         <a-card title="Time Off" :bordered="false">
           <a-row>
-            <a-col :span="10">
+            <a-col :span="15">
               <p>No time off planned</p>
             </a-col>
             <a-col :span="10">
@@ -76,7 +76,7 @@
           </a-row>
         </a-card>
       </a-col>
-      <a-col :span="7">
+      <a-col :span="5">
         <a-card title="Pending Request" :bordered="false">
           <a-row>
             <a-col :span="15">
@@ -89,7 +89,7 @@
           </a-row>
         </a-card>
       </a-col>
-      <a-col :span="7">
+      <a-col :span="5">
         <a-card title="Org Chart" :bordered="false">
           <a-row>
             <a-col :span="15">
@@ -117,7 +117,7 @@
         <a-card title="Admin Center" :bordered="false" >
           <h1><a-icon type="setting" theme="filled" /></h1>
           <a-divider></a-divider>
-          <h6><nuxt-link to="/center">Admin Center</nuxt-link></h6>
+          <h3><nuxt-link to="/time-sheet">Admin Center</nuxt-link></h3>
         </a-card>
       </a-col>
       <a-col :span="8">
