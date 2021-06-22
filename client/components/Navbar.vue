@@ -58,6 +58,7 @@
                   <fa icon="cog" fixed-width />
                   Setting
                 </router-link>
+               
                 <router-link
                   :to="{ name: 'supervisor.index' }"
                   class="dropdown-item pl-3">
