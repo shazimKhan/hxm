@@ -1,7 +1,10 @@
 <template>
 <div class="suphome">
   <div>
-    <h3>SuperVisor Home Page</h3>
+    <a-card>
+      <h3>SuperVisor Home Page</h3>
+    </a-card>
+    
     <a-divider></a-divider>
     <div class="row">
       
@@ -43,14 +46,14 @@
           </a-row>
         </a-card>
       </a-col>
-      <a-col :span="8">
+      <a-col :span="10">
         <a-card title="Pending Request" :bordered="false">
           <a-row>
             <a-col :span="15">
               <h2><a-icon type="message" /></h2>
             </a-col>
             <a-col :span="3">
-              <h2>0</h2>
+              <h2 style="color: red">5</h2>
               <p>Request</p>
             </a-col>
           </a-row>
@@ -92,7 +95,7 @@
       </a-col>
       <a-col :span="8">
         <a-card title="Admin Favourite" :bordered="false">
-          <h1><a-icon type="sync" spin /></h1>
+          <h1 style="color: green"><a-icon type="sync" spin /></h1>
         </a-card>
       </a-col>
 
@@ -135,6 +138,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height: 1.2;
     text-align: left;
 }
-
+.hello {
+  padding: 25px;
+  background-color: rgb(206, 218, 240);
+}
 
 </style>

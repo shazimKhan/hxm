@@ -1,5 +1,8 @@
 <template>
     <div class="supcenter">
+      <a-card class="c">
+      <h3>Supervisor Admin Center</h3>
+    </a-card>
    <template>
   <div style="padding: 20px;">
     <a-row :gutter="16">
@@ -14,7 +17,7 @@
               <a href="">See more</a>
             </a-col>
             <a-col :span="3">
-              <h2>7</h2>
+              <h2 style="color: red">7</h2>
             </a-col>
           </a-row>
           <a-row>
@@ -26,14 +29,14 @@
               <a href="">See more</a>
             </a-col>
             <a-col :span="3">
-              <h2>7</h2>
+              <h2 style="color: red">10</h2>
             </a-col>
           </a-row>
         </a-card>
       </a-col>
       <a-col :span="5">
         <a-card title="Intelligent Service Center(ISC)" :bordered="false">
-          <h1><a-icon type="bar-chart" /></h1>
+          <h1 style="color: green"><a-icon type="bar-chart" /></h1>
           <br><h4>No Event Raised</h4><br><h6>Past 7 Days</h6>
         </a-card>
       </a-col>
@@ -54,7 +57,7 @@
           <a-col :span="8">
                   <a-select
                     default-value="no"
-                    style="width: 100%"
+                    style="width: 150%"
                     @change="handleChange"
                   >
                     <a-icon slot="suffixIcon" type="down" />
@@ -74,7 +77,7 @@
       </a-col>
       <a-col :span="8">
         <a-card title="Latest Check tool Result" :bordered="false">
-          <h1><a-icon type="loading" /></h1>
+          <h1 style="color: Blue"><a-icon type="loading" /></h1>
           <br><h3>Loading...</h3>
         </a-card>
       </a-col>
@@ -89,5 +92,8 @@
 
 </script>
 <style>
-
+.c {
+  padding: 25px;
+  background-color: rgb(206, 218, 240);
+}
 </style>

@@ -13,10 +13,10 @@
         <a-card title="Review Performance" :bordered="false" >
           <a-row>
             <a-col :span="7">
-              <h2><a-icon type="dashboard" theme="filled" /></h2>
+              <h2 style="color: black"><a-icon type="dashboard" theme="filled" /></h2>
             </a-col>
             <a-col :span="3">
-              <h2>7</h2>
+              <h2 style="color: red">7</h2>
               <p>Reviews</p>
             </a-col>
           </a-row>
@@ -26,10 +26,10 @@
         <a-card title="Approval Request" :bordered="false">
           <a-row>
             <a-col :span="7">
-              <h2><a-icon type="folder-open" /></h2>
+              <h2 style="color: black"><a-icon type="folder-open" /></h2>
             </a-col>
             <a-col :span="3">
-              <h2>3</h2>
+              <h2 style="color: red">3</h2>
               <p>Requests</p>
             </a-col>
           </a-row>
@@ -80,10 +80,10 @@
         <a-card title="Pending Request" :bordered="false">
           <a-row>
             <a-col :span="15">
-              <h2><a-icon type="message" /></h2>
+              <h2 style="color: black"><a-icon type="message" /></h2>
             </a-col>
             <a-col :span="3">
-              <h2>0</h2>
+              <h2 style="color: red">0</h2>
               <p>Request</p>
             </a-col>
           </a-row>
@@ -93,10 +93,10 @@
         <a-card title="Org Chart" :bordered="false">
           <a-row>
             <a-col :span="15">
-              <h2><a-icon type="pie-chart" /></h2>
+              <h2 style="color: black"><a-icon type="pie-chart" /></h2>
             </a-col>
             <a-col :span="3">
-              <h2>1</h2>
+              <h2 style="color: blue">1</h2>
               <p>Chart</p>
             </a-col>
           </a-row>
@@ -160,10 +160,11 @@ body{
 {
 text-align: left;
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
     text-align: left;
 }
+
 </style>
