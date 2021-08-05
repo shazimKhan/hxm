@@ -1,6 +1,8 @@
+
 <template>
 <div class="theme">
     <ColorModePicker />
+    
   <div>
     <a-divider></a-divider>
     <div class="row">
@@ -136,9 +138,10 @@
 </template>
 <script>
 import ColorModePicker from '@/components/ColorModePicker'
-
+import { VueDraggableCard } from "vue-draggable-card";
 export default {
   components: {
+    VueDraggableCard,
     ColorModePicker
   }
 }

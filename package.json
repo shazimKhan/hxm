@@ -29,8 +29,11 @@
     "sweetalert2": "^10.10.4",
     "vform": "^1.0.1",
     "vue": "^2.6.12",
+    "vue-dnd-zone": "^0.4.0",
+    "vue-draggable-card": "0.0.4",
     "vue-horizontal-calendar": "^0.8.2",
     "vue-i18n": "^8.22.2",
+    "vue-resizable": "^2.0.5",
     "vue-scrollto": "^2.20.0",
     "vuejs-datepicker": "^1.6.2"
   },

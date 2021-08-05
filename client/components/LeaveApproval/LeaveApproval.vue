@@ -4,6 +4,7 @@
       <h3>Team Absense Calender</h3>
     </a-card>
     <a-card>
+      
       <a-row>
         <a-col :span="5">
           <h6>My Reporting Hirarchy</h6>
@@ -38,8 +39,10 @@
                   format="MMMM,YY" 
                 />
                   </a-col>
+
+                  
+
                   <a-col :span="12" align="end">
-                    
                   <a-checkbox @change="onChange" value="absent" > Abesnties </a-checkbox> 
                   </a-col>
                 </a-row>
@@ -118,7 +121,9 @@
                   <tbody>
                   </tbody>
                 </table> -->
-              </a-card>
+               <a-button shape=round size=large type=primary>Accept</a-button>
+               <a-button shape=round size=large type=danger>Reject</a-button>
+              </a-card>                  
             </a-tab-pane>
             
             <a-tab-pane key="2" tab="My Direct Reporties">
@@ -129,11 +134,13 @@
                       </li>
                   </ul> 
               </a-card> -->
-                  <a-card>
+              <a-card>
                 <a-row>
                   <a-col :span="12">
-                     <a-month-picker
+                  <a-month-picker
+                  
                   :size="size"
+                  style=" size='40px' " 
                   @change="monthPickerChange"
                   placeholder="Month"
                   default="currentMonth"
@@ -141,18 +148,13 @@
                 />
                   </a-col>
                   <a-col :span="12" align="end">
-                    
                   <a-checkbox @change="onChange" value="absent" > Abesnties </a-checkbox> 
                   </a-col>
                 </a-row>
                
                 <a-divider dashed/>
-              <a-row>
-                <a-col :span="10" :offset="4">
-                  <VueHorizontalCalendar  style="width:410px;margin: 0 auto;"  :resizeable="false" lang="en" :swipeSpace="14"/>
-                </a-col>
-              </a-row> 
-     
+               
+            <VueHorizontalCalendar lang="en" :swipeSpace="14"/>
             <a-table :columns="columns" :data-source="data">
               <a slot="profile" slot-scope="text">
                  <a-avatar :size="35" icon="user" />
@@ -171,7 +173,6 @@
                     <a-col :span="4" class="calender-col" >
                      <p class="calender-box"  :style="{borderRight: '2px groove #da15b9'}"></p>
                     </a-col>
-                  
                   </a-row>
                 
                </span>
@@ -224,6 +225,8 @@
                   <tbody>
                   </tbody>
                 </table> -->
+                <a-button shape=round size=large type=primary>Accept</a-button>
+               <a-button shape=round size=large type=danger>Reject</a-button>
               </a-card>
             </a-tab-pane>
           </a-tabs>
@@ -279,7 +282,7 @@ const columns = [
 const data = [
   {
     key: '1',
-    profile: 'Charles Brown',
+    profile: 'Imran Khan',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -288,7 +291,7 @@ const data = [
   },
   {
     key: '2',
-    profile: 'Chritsine Dolan',
+    profile: 'Irteza Imjad',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -297,7 +300,7 @@ const data = [
   },
   {
     key: '3',
-    profile: 'Lauren Robins',
+    profile: 'Noor ul Amin',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -306,7 +309,7 @@ const data = [
   },
   {
     key: '4',
-    profile: 'Jacob Curran',
+    profile: 'Janzaib Khan',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -315,7 +318,7 @@ const data = [
   },
   {
     key: '5',
-    profile: 'Jordan Robinson',
+    profile: 'Mirza Ali',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -324,7 +327,7 @@ const data = [
   },
   {
     key: '6',
-    profile: 'Macrus Wright',
+    profile: 'Doctor Israr',
     week_23: '',
     week_24: '',
     week_25: '',
@@ -359,8 +362,8 @@ const calculateRange = (totalDays, startDate) => {
 export default {
   data() {
     return {
-      itemList: ["Khubaib", "Israr", "Faizan","Nouman"],
-      mypeers:["a", "b" , "c" , "d"],
+      itemList: ["Khubaib", "Faizan"],
+      mypeers:["a", "b"],
       selectedOrgs: [],
       currentMonth: currentDate.format("MMMM/YY"),
       calculatedRange: calculateRange(daysInMonth, currentDate),
@@ -404,5 +407,6 @@ export default {
   width: 80%;
   margin-left: 192px;
 }
+
 </style>
 
