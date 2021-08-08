@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Absence;
 class AbsenseController extends Controller
 {
     //
@@ -13,8 +13,8 @@ class AbsenseController extends Controller
         //
          
          $data =$request->all();
-         $resp  = DB::table('absense')->insert($data);
-         return  $this->response->success('data  insertedSuccessfully',[]);
+         $resp  =Absence::create($data);
+         return  response()->json(['message'=>'insertedSuccessfully','data'=>$resp]);
     }
 
 

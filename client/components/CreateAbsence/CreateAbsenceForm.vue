@@ -75,7 +75,7 @@
                     xs: 24,
                   }"
                 >
-                  <a-input v-model="createForm.balance" />
+                  <a-input v-model="createForm.available_balance" />
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -230,7 +230,7 @@
             <a-row>
               <a-col :xs="10" :sm="12" :md="4" :lg="24" :xl="24">
                 <div class="Reset_btn mt-3">
-                  <a-button type="submit" @submit="onSubmit" >
+                  <a-button type="submit" @click="onSubmit" >
                     Submit
                   </a-button>
                   <!-- <a-button class="mt-2" @click="handleCancel">
@@ -248,16 +248,17 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       loading: false,
       createForm: {
         time_type: "Casual",
-        // balance: "0 days",
-        start_date: "2021/07/06",
-        end_date: "2021/08/06",
-        comment: "Hello world",
+        available_balance: "15",
+        start_date: "",
+        end_date: "",
+        comment: "",
       },
     };
   },
@@ -268,16 +269,20 @@ export default {
       this.loading = false;
     },
     async onSubmit(event) {
-      event.preventDefault();
-      let resp = await this.$axios
-        .post("absence", this.createForm)
+     await this.$refs.createForm.validate(async (valid) => {
+        if (valid) {
+         let resp = await this.$axios.post("/absence", this.createForm)
         .then((resp) => {
           console.log(resp);
-          this.$toast.success(resp.data.msg);
         })
         .catch((error) => {
           console.log(error);
         });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
     },
     handleCancel(e) {
       this.$refs.createForm.resetFields();

@@ -3,7 +3,7 @@
       <a-card class="c">
       <h3>Supervisor Admin Center</h3>
     </a-card>
-   <template>
+
   <div style="padding: 20px;">
     <a-row :gutter="16">
       <a-col :span="10">
@@ -83,10 +83,10 @@
       </a-col>
     </a-row>
   </div>
-</template>
-
     </div>
 </template>
+
+
 
 <script>
 

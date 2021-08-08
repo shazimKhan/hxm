@@ -14,7 +14,7 @@
               <div>
                 <a-row> 
                     <div class="reporties" v-for="peers in itemList" :key="peers">
-                        <a-checkbox @change="onChange(peers)" v-bind:value="{selectedOrgs: peers}" > </a-checkbox>
+              
                     <a-avatar :size="35" icon="user" />{{ peers }}
                     <a-divider></a-divider>
                     </div>
@@ -26,104 +26,9 @@
         </a-col>
         
         <a-col :span="19">
-          <a-tabs default-active-key="1" @change="callback">
+          <a-tabs default-active-key="1" >
             <a-tab-pane key="1" tab="My Peers">
-              <a-card>
-                <a-row>
-                  <a-col :span="12">
-                     <a-month-picker
-                  :size="size"
-                  @change="monthPickerChange"
-                  placeholder="Month"
-                  default="currentMonth"
-                  format="MMMM,YY" 
-                />
-                  </a-col>
-
-                  
-
-                  <a-col :span="12" align="end">
-                  <a-checkbox @change="onChange" value="absent" > Abesnties </a-checkbox> 
-                  </a-col>
-                </a-row>
-               
-                <a-divider dashed/>
-               
-            <VueHorizontalCalendar lang="en" :swipeSpace="14"/>
-            <a-table :columns="columns" :data-source="data">
-              <a slot="profile" slot-scope="text">
-                 <a-avatar :size="35" icon="user" />
-               {{text.profile}} </a>
-               <span slot="week_23">
-                  <a-row>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box"  :style="{borderRight: '2px groove #da15b9'}"></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_24">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_25">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_26">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_27">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-            </a-table>
-                <!-- <table> 
-                  <thead>
-                    <tr>
-                      <th />
-                      <th v-for="date in calculatedRange" :key="{ date }">
-                         {{ date.dayName }} <br>{{ date.day }}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table> -->
-               <a-button shape=round size=large type=primary>Accept</a-button>
-               <a-button shape=round size=large type=danger>Reject</a-button>
-              </a-card>                  
+                     <FullCalendar :options="calendarOptions" />          
             </a-tab-pane>
             
             <a-tab-pane key="2" tab="My Direct Reporties">
@@ -134,100 +39,7 @@
                       </li>
                   </ul> 
               </a-card> -->
-              <a-card>
-                <a-row>
-                  <a-col :span="12">
-                  <a-month-picker
-                  
-                  :size="size"
-                  style=" size='40px' " 
-                  @change="monthPickerChange"
-                  placeholder="Month"
-                  default="currentMonth"
-                  format="MMMM,YY" 
-                />
-                  </a-col>
-                  <a-col :span="12" align="end">
-                  <a-checkbox @change="onChange" value="absent" > Abesnties </a-checkbox> 
-                  </a-col>
-                </a-row>
-               
-                <a-divider dashed/>
-               
-            <VueHorizontalCalendar lang="en" :swipeSpace="14"/>
-            <a-table :columns="columns" :data-source="data">
-              <a slot="profile" slot-scope="text">
-                 <a-avatar :size="35" icon="user" />
-               {{text.profile}} </a>
-               <span slot="week_23">
-                  <a-row>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box" ></p>
-                    </a-col>
-                    <a-col :span="4" class="calender-col" >
-                     <p class="calender-box"  :style="{borderRight: '2px groove #da15b9'}"></p>
-                    </a-col>
-                  </a-row>
-                
-               </span>
-               <span slot="week_24">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_25">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_26">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-               <span slot="week_27">
-                  <a-row>
-                    <a-col :span="4"  class="calender-col" v-for="(item,index) in 4" :key="index">
-                     <p class="calender-box" ></p>
-                    </a-col>
-                  
-                  </a-row>
-                
-               </span>
-            </a-table>
-                <!-- <table> 
-                  <thead>
-                    <tr>
-                      <th />
-                      <th v-for="date in calculatedRange" :key="{ date }">
-                         {{ date.dayName }} <br>{{ date.day }}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table> -->
-                <a-button shape=round size=large type=primary>Accept</a-button>
-               <a-button shape=round size=large type=danger>Reject</a-button>
-              </a-card>
+ <FullCalendar :options="calendarOptions" />   
             </a-tab-pane>
           </a-tabs>
         </a-col>
@@ -238,109 +50,16 @@
 </template>
 
 <script>
-import VueHorizontalCalendar from "vue-horizontal-calendar";
+// Load CSS from the published version
+
+import '@fullcalendar/core/vdom' // solves problem with Vite
+import FullCalendar from '@fullcalendar/vue'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
 import Datepicker from "vuejs-datepicker";
 import moment from "moment";
-const columns = [
-  {
-    dataIndex: '',
-    key: 'profile',
-    scopedSlots: { customRender: 'profile' },
-  },
-  {
-    title: 'Week 23',
-    dataIndex: 'week_23',
-    key: 'week_23',
-    scopedSlots: { customRender: 'week_23' },
-  },
-  {
-    title: 'Week 24',
-    dataIndex: 'week_24',
-    key: 'week_24',
-    scopedSlots: { customRender: 'week_24' },
-  },
-  {
-    title: 'Week 25',
-    key: 'week_25',
-    dataIndex: 'week_25',
-    scopedSlots: { customRender: 'week_25' },
-  },
-  {
-    title: 'Week 26',
-    key: 'week_26',
-    dataIndex: 'week_26',
-    scopedSlots: { customRender: 'week_26' },
-  },
-  {
-    title: 'Week 27',
-    key: 'week_27',
-    dataIndex: 'week_27',
-    scopedSlots: { customRender: 'week_27' },
-  },
-];
 
-const data = [
-  {
-    key: '1',
-    profile: 'Imran Khan',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-  {
-    key: '2',
-    profile: 'Irteza Imjad',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-  {
-    key: '3',
-    profile: 'Noor ul Amin',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-  {
-    key: '4',
-    profile: 'Janzaib Khan',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-  {
-    key: '5',
-    profile: 'Mirza Ali',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-  {
-    key: '6',
-    profile: 'Doctor Israr',
-    week_23: '',
-    week_24: '',
-    week_25: '',
-    week_26: '',
-    week_27: '',
-  },
-];
 
-const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-const currentDate = moment();
-const currentMonth = currentDate.format("MM");
-const daysInMonth = DAYS_IN_MONTH[parseInt(currentMonth) - 1];
 
 const calculateRange = (totalDays, startDate) => {
   let selectedDays = [];
@@ -365,15 +84,15 @@ export default {
       itemList: ["Khubaib", "Faizan"],
       mypeers:["a", "b"],
       selectedOrgs: [],
-      currentMonth: currentDate.format("MMMM/YY"),
-      calculatedRange: calculateRange(daysInMonth, currentDate),
       size: 'large',
-       data,
-      columns,
+      calendarOptions: {
+        plugins: [ dayGridPlugin, interactionPlugin ],
+        initialView: 'dayGridMonth'
+      }
     };
   },
   components: {
-    VueHorizontalCalendar,
+    FullCalendar,
     Datepicker,
     moment,
   },
@@ -409,4 +128,3 @@ export default {
 }
 
 </style>
-

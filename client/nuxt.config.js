@@ -50,9 +50,13 @@ module.exports = {
 
   modules: [
     '@nuxtjs/router',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/axios'
   ],
-
+  axios: {
+    progress:false,
+    baseURL: 'http://127.0.0.1:8000/api/', // Used as fallback if no runtime config is provided
+  },
   build: {
     extractCSS: true,
     babel: {
