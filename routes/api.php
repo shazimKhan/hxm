@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AbsenseController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -43,4 +43,10 @@ Route::group(['middleware' => 'guest:api'], function () {
 
     Route::post('oauth/{driver}', [OAuthController::class, 'redirect']);
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
+
+    Route::post('absenses', [AbsenseController::class, 'absenses']);
+    Route::get('getData', [AbsenseController::class, 'getAbsenses']);
+
 });
+
+

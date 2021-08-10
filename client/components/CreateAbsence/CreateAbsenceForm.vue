@@ -9,6 +9,8 @@
             :hide-required-mark="true"
             :model="createForm"
             label-align="center"
+            
+
           >
             <a-row :gutter="16">
               <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
@@ -40,7 +42,6 @@
                 
                     <a-select-option value="1"> Sickness </a-select-option>
                     <a-select-option value="2"> Casual</a-select-option>
-                    <a-select-option value="3"> Public</a-select-option>
                     <a-select-option value="4"> Religious</a-select-option>
                     <a-select-option value="5"> Maternity</a-select-option>
                     <a-select-option value="6"> Paternity</a-select-option>
@@ -56,6 +57,7 @@
                 <a-form-model-item
                   :label="'Avaliable Balance'"
                   prop="balance"
+                  disabled
                   has-feedback
                   :colon="false"
                   :wrapper-col="{
@@ -73,7 +75,7 @@
                     xs: 24,
                   }"
                 >
-                  <a-input v-model="createForm.balance" />
+                  <a-input v-model="createForm.available_balance" />
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -133,7 +135,7 @@
                 </a-form-model-item>
               </a-col>
             </a-row>
-            <a-row :gutter="16">
+            <!-- <a-row :gutter="16">
               <a-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
                 <a-form-model-item
                   :label="'Requesting'"
@@ -191,14 +193,14 @@
                     v-model="createForm.retruning"
                     style="width: 100%"
                   />
-                  <!-- <a-input v-model="createForm.retruning" /> -->
+                   <a-input v-model="createForm.retruning" /> 
                 </a-form-model-item>
               </a-col>
-            </a-row>
-            <a-row :gutter="16" class="px-2">
+            </a-row> -->
+            <!-- <a-row :gutter="16" class="px-2">
               <p>Team Absences</p>
               <a href="#">No Team Members Absent</a>
-            </a-row>
+            </a-row> -->
             <a-row :gutter="16" class="mt-2">
               <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <a-form-model-item
@@ -228,12 +230,12 @@
             <a-row>
               <a-col :xs="10" :sm="12" :md="4" :lg="24" :xl="24">
                 <div class="Reset_btn mt-3">
-                  <a-button type="primary" @click="handleSave">
+                  <a-button type="submit" @click="onSubmit" >
                     Submit
                   </a-button>
-                  <a-button class="mt-2" @click="handleCancel">
+                  <!-- <a-button class="mt-2" @click="handleCancel">
                     <nuxt-link to="/time-sheet"> Cancel</nuxt-link>
-                  </a-button>
+                  </a-button> -->
                   
                 </div>
               </a-col>
@@ -246,17 +248,16 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       loading: false,
       createForm: {
-        time_type: "",
-        balance: "0 days",
+        time_type: "Casual",
+        available_balance: "15",
         start_date: "",
         end_date: "",
-        requesting: "",
-        retruning: "",
         comment: "",
       },
     };
@@ -267,7 +268,22 @@ export default {
       // await this.createForm()
       this.loading = false;
     },
-
+    async onSubmit(event) {
+     await this.$refs.createForm.validate(async (valid) => {
+        if (valid) {
+         let resp = await this.$axios.post("/absence", this.createForm)
+        .then((resp) => {
+          console.log(resp);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
+    },
     handleCancel(e) {
       this.$refs.createForm.resetFields();
     },

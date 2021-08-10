@@ -31,8 +31,9 @@
                 </a-select>
               </a-col>
         </div>
-
+        
         <div id="navbarToggler" class="collapse navbar-collapse pl-5">
+          
           <ul class="navbar-nav ml-auto">
             <!-- Authenticated -->
             <li v-if="user" class="nav-item dropdown">
@@ -57,7 +58,13 @@
                   <fa icon="cog" fixed-width />
                   Setting
                 </router-link>
-
+               
+                <router-link
+                  :to="{ name: 'supervisor.index' }"
+                  class="dropdown-item pl-3">
+                  <fa icon="cog" fixed-width />
+                  Supervisor
+                </router-link>
                 <div class="dropdown-divider" />
                 <a class="dropdown-item pl-3" href="#" @click.prevent="logout">
                   <fa icon="sign-out-alt" fixed-width />
