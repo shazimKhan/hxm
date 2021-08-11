@@ -104,6 +104,8 @@
                   <a-date-picker
                     v-model="createForm.start_date"
                     style="width: 100%"
+                    format='YYYY-MM-DD'
+                   
                   />
                 </a-form-model-item>
               </a-col>
@@ -131,6 +133,7 @@
                   <a-date-picker
                     v-model="createForm.end_date"
                     style="width: 100%"
+                     :format="'YYYY-MM-DD'"
                   />
                 </a-form-model-item>
               </a-col>
@@ -248,7 +251,7 @@
 </template>
 
 <script>
-
+import moment from 'moment'
 export default {
   data() {
     return {
@@ -256,8 +259,8 @@ export default {
       createForm: {
         time_type: "Casual",
         available_balance: "15",
-        start_date: "",
-        end_date: "",
+        start_date: null,
+        end_date: null,
         comment: "",
       },
     };
@@ -271,9 +274,13 @@ export default {
     async onSubmit(event) {
      await this.$refs.createForm.validate(async (valid) => {
         if (valid) {
-         let resp = await this.$axios.post("/absence", this.createForm)
+         
+          this.createForm.start_date  = moment(this.createForm.start_date).format('YYYY-MM-DD')
+          this.createForm.end_date  =moment(this.createForm.end_date).format('YYYY-MM-DD')
+         let resp = await this.$axios.post("/absenses", this.createForm)
         .then((resp) => {
-          console.log(resp);
+         alert('Absensce Added Succsfully');
+         this.handleCancel();
         })
         .catch((error) => {
           console.log(error);

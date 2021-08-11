@@ -8,7 +8,7 @@ use App\Models\Absence;
 class AbsenseController extends Controller
 {
     //
-    public function absenses(Request $request, $id)
+    public function absenses(Request $request)
     {
         //
          
