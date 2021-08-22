@@ -44,7 +44,6 @@
                 <a-select-option value="4">
                   Holiday 4
                 </a-select-option>
-
               </a-select>
             </a-col>
             <a-col :span="3" class="pt-1 pl-4">
@@ -100,78 +99,182 @@
     <a-row>
       <a-card :title="'  Holiday Caldendar: Holcal (Holcal)'">
         <a-row>
-          <a-col :span="16" :offset="7">
-            <a-row :gutter="16">
-              <a-col :span="4" class="text-right">
-                <p><span class="text-danger">*</span>Name</p>
-              </a-col>
-              <a-col :span="5">
-                <a-input placeholder="Holcal" />
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="weibo-circle" />
-                </div>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="question-circle" theme="filled" />
-                </div>
-              </a-col>
-            </a-row>
-            <a-row :gutter="16" class="my-2">
-              <a-col :span="4" class="text-right">
-                <p>Country/Region</p>
-              </a-col>
-              <a-col :span="4">
-                <a-select
-                  default-value="default"
-                  style="width: 100%"
-                  @change="handleChange"
-                >
-                  <a-icon slot="suffixIcon" type="down" />
-                  <a-select-option value="default">
-                    No Selection
-                  </a-select-option>
-                  <a-select-option value="1">
-                    Pakistan
-                  </a-select-option>
-                  <a-select-option value="2">
-                    India
-                  </a-select-option>
-                  <a-select-option value="3">
-                    America
-                  </a-select-option>
-                  <a-select-option value="4">
-                    China
-                  </a-select-option>
-                </a-select>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="plus-circle" theme="filled" />
-                </div>
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="question-circle" theme="filled" />
-                </div>
-              </a-col>
-            </a-row>
-            <a-row :gutter="16">
-              <a-col :span="4" class="text-right">
-                <p><span class="text-danger">*</span> External Code</p>
-              </a-col>
-              <a-col :span="5">
-                <a-input placeholder="Holcal" />
-              </a-col>
-              <a-col :span="1">
-                <div class="send-icon">
-                  <a-icon type="question-circle" theme="filled" />
-                </div>
-              </a-col>
-            </a-row>
-          </a-col>
+          <form>
+            <a-col :span="16" :offset="7">
+              <a-row :gutter="16">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span>Name</p>
+                </a-col>
+                <a-col :span="5">
+                  <a-input v-model="holidayLeave.name" placeholder="Holcal" required />
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="weibo-circle" />
+                  </div>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16" class="my-2">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span> Country/Region</p>
+                </a-col>
+                <a-col :span="4">
+                  <a-select
+                    v-model="holidayLeave.country"
+                    default-value="default"
+                    style="width: 100%"
+                    required
+                  >
+                    <a-icon slot="suffixIcon" type="down" />
+                    <a-select-option value="default">
+                      No Selection
+                    </a-select-option>
+                    <a-select-option value="pakistan">
+                      Pakistan
+                    </a-select-option>
+                    <a-select-option value="india">
+                      India
+                    </a-select-option>
+                    <a-select-option value="america">
+                      America
+                    </a-select-option>
+                    <a-select-option value="china">
+                      China
+                    </a-select-option>
+                  </a-select>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="plus-circle" theme="filled" />
+                  </div>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16" class="my-2">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span> Holiday Name</p>
+                </a-col>
+                <a-col :span="10">
+                  <a-select
+                    v-model="holidayLeave.holiday_name"
+                    default-value="name"
+                    style="width: 50%"
+                    required
+                  >
+                    <a-icon slot="suffixIcon" type="down" />
+                    <a-select-option value="name">
+                      Select Holiday Name
+                    </a-select-option>
+                    <a-select-option value="happy-new-year">
+                      Happy New Year
+                    </a-select-option>
+                    <a-select-option value="independence-day">
+                      Independence Day
+                    </a-select-option>
+                    <a-select-option value="labour-day">
+                      Labour Day
+                    </a-select-option>
+                    <a-select-option value="pakistan-day">
+                      Pakistan Day
+                    </a-select-option>
+                    <a-select-option value="kashmir-solidarity-day">
+                      Kashmir Solidarity Day
+                    </a-select-option>
+                    <a-select-option value="eid-al-fitr">
+                      Eid al-Fitr
+                    </a-select-option>
+                    <a-select-option value="eid-al-adha">
+                      Eid al-Adha
+                    </a-select-option>
+                  </a-select>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="plus-circle" theme="filled" />
+                  </div>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span> Holiday Class</p>
+                </a-col>
+                <a-col :span="10">
+                  <a-select
+                    v-model="holidayLeave.holiday_class"
+                    default-value="none"
+                    style="width: 50%"
+                    required
+                  >
+                    <a-icon slot="suffixIcon" type="down" />
+                    <a-select-option value="full">
+                      Full
+                    </a-select-option>
+                    <a-select-option value="half">
+                      Half
+                    </a-select-option>
+                    <a-select-option value="none">
+                      None
+                    </a-select-option>
+                  </a-select>
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span> External Code</p>
+                </a-col>
+                <a-col :span="10">
+                  <a-input v-model="holidayLeave.external_code" required />
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16">
+                <a-col :span="4" class="text-right">
+                  <p><span class="text-danger">*</span> Date Of Holiday</p>
+                </a-col>
+                <a-col :span="10">
+                  <a-date-picker
+                    v-model="holidayLeave.date_of_holiday"
+                    :format="dateFormat"
+                  />
+                </a-col>
+                <a-col :span="1">
+                  <div class="send-icon">
+                    <a-icon type="question-circle" theme="filled" />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-row :gutter="16">
+                <a-col :span="4" :offset="2" class="text-right">
+                  <a-button :loading="loading" type="primary" @click="handleSave">
+                    Save
+                  </a-button>
+                </a-col>
+              </a-row>
+            </a-col>
+          </form>
         </a-row>
         <a-row>
           <a-col :span="24">
@@ -185,13 +288,13 @@
               <template slot="title">
                 <h6>Holiday Assignments</h6>
               </template>
-              <span slot="date">
+              <!-- <span slot="date">
                 <a-date-picker
                   :default-value="moment('01/01/2018', dateFormat)"
                   :format="dateFormat"
                 />
-              </span>
-              <span slot="full">
+              </span> -->
+              <!-- <span slot="full">
                 <a-select
                   default-value="none"
                   style="width: 50%"
@@ -225,7 +328,7 @@
                   <a-select-option value="6"> Eid al-Fitr </a-select-option>
                   <a-select-option value="7"> Eid al-Adha </a-select-option>
                 </a-select>
-              </span>
+              </span> -->
               <span slot="icon">
                 <a-row>
                   <a-col :span="3" class="mr-3">
@@ -245,7 +348,7 @@
                   </a-col>
                 </a-row>
               </span>
-              <template slot="footer" class="bg-footer">
+              <!-- <template slot="footer" class="bg-footer">
                 <div class="save-btn text-right">
                   <a-button type="success">
                     Reset
@@ -255,7 +358,7 @@
                     Save
                   </a-button>
                 </div>
-              </template>
+              </template> -->
             </a-table>
           </a-col>
         </a-row>
@@ -297,26 +400,68 @@ const columns = [
   }
 ]
 
-const data = []
-for (let i = 0; i < 5; i++) {
-  data.push({
-    key: i
-  })
-}
 export default {
   data () {
     return {
-      dateFormat: 'DD/MM/YYYY',
+      data: [],
+      loading: false,
+      dateFormat: 'YYYY-MM-DD',
       monthFormat: 'MM/YYYY',
       dateFormatList: ['DD/MM/YYYY', 'DD/MM/YY'],
       lists: [1, 2, 3, 4],
       items: [1, 2, 3, 4],
-      data,
-      columns
+      columns,
+      holidayLeave: {
+        name: '',
+        country: '',
+        date_of_holiday: '',
+        external_code: '',
+        holiday_name: '',
+        holiday_class: ''
+      }
     }
+  },
+  mounted () {
+    this.getHolidayCalender()
   },
   methods: {
     moment,
+    async handleSave () {
+      this.holidayLeave.date_of_holiday = moment(this.holidayLeave.date_of_holiday).format('YYYY-MM-DD')
+      this.loading = true
+      await this.$axios.post('/saveHolidayCalender', this.holidayLeave)
+        .then((resp) => {
+          alert('Holiday Added Succsfully')
+          this.getHolidayCalender()
+          this.loading = false
+        })
+        .catch((error) => {
+          this.loading = false
+          console.log(error)
+          alert('Please all filled all required fields')
+          // alert(error.message)
+        })
+    },
+    async getHolidayCalender () {
+      const _this = this
+      await this.$axios.get('/getHolidayCalender')
+        .then((resp) => {
+          console.log(resp.data.data.length)
+          for (let i = 0; i < resp.data.data.length; i++) {
+            _this.data.push({
+              key: i,
+              date_of_holiday: resp.data.data[i].date_of_holiday,
+              holiday_class: resp.data.data[i].holiday_class,
+              holiday: resp.data.data[i].holiday_name
+            })
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+
+          // alert(error.message)
+        })
+    },
     handleChange (val) {
       console.log(val)
     }

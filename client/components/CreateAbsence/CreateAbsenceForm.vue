@@ -9,8 +9,6 @@
             :hide-required-mark="true"
             :model="createForm"
             label-align="center"
-            
-
           >
             <a-row :gutter="16">
               <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
@@ -33,19 +31,30 @@
                     sm: 24,
                     xs: 24,
                   }"
-                  >
+                >
                   <a-select
                     v-model="createForm.time_type"
                     default-value="default"
                     style="width: 100%"
                   >
-                
-                    <a-select-option value="1"> Sickness </a-select-option>
-                    <a-select-option value="2"> Casual</a-select-option>
-                    <a-select-option value="4"> Religious</a-select-option>
-                    <a-select-option value="5"> Maternity</a-select-option>
-                    <a-select-option value="6"> Paternity</a-select-option>
-                    <a-select-option value="7"> Annual</a-select-option>
+                    <a-select-option value="sickness">
+                      Sickness
+                    </a-select-option>
+                    <a-select-option value="casual">
+                      Casual
+                    </a-select-option>
+                    <a-select-option value="religious">
+                      Religious
+                    </a-select-option>
+                    <a-select-option value="maternity">
+                      Maternity
+                    </a-select-option>
+                    <a-select-option value="paternity">
+                      Paternity
+                    </a-select-option>
+                    <a-select-option value="annual">
+                      Annual
+                    </a-select-option>
                   </a-select>
 
                   <!-- <a-input v-model="createForm.time_type" /> -->
@@ -104,8 +113,7 @@
                   <a-date-picker
                     v-model="createForm.start_date"
                     style="width: 100%"
-                    format='YYYY-MM-DD'
-                   
+                    format="YYYY-MM-DD"
                   />
                 </a-form-model-item>
               </a-col>
@@ -133,7 +141,7 @@
                   <a-date-picker
                     v-model="createForm.end_date"
                     style="width: 100%"
-                     :format="'YYYY-MM-DD'"
+                    :format="'YYYY-MM-DD'"
                   />
                 </a-form-model-item>
               </a-col>
@@ -167,7 +175,7 @@
                   >
                     <a-select-option value="jack"> 1 day </a-select-option>
                     <a-select-option value="lucy"> 1 week</a-select-option>
-                  
+
                   </a-select>
                 </a-form-model-item>
               </a-col>
@@ -196,7 +204,7 @@
                     v-model="createForm.retruning"
                     style="width: 100%"
                   />
-                   <a-input v-model="createForm.retruning" /> 
+                   <a-input v-model="createForm.retruning" />
                 </a-form-model-item>
               </a-col>
             </a-row> -->
@@ -233,13 +241,12 @@
             <a-row>
               <a-col :xs="10" :sm="12" :md="4" :lg="24" :xl="24">
                 <div class="Reset_btn mt-3">
-                  <a-button type="submit" @click="onSubmit" >
+                  <a-button type="submit" @click="onSubmit">
                     Submit
                   </a-button>
                   <!-- <a-button class="mt-2" @click="handleCancel">
                     <nuxt-link to="/time-sheet"> Cancel</nuxt-link>
                   </a-button> -->
-                  
                 </div>
               </a-col>
             </a-row>
@@ -253,49 +260,43 @@
 <script>
 import moment from 'moment'
 export default {
-  data() {
+  data () {
     return {
       loading: false,
       createForm: {
-        time_type: "Casual",
-        available_balance: "15",
+        time_type: 'Casual',
+        available_balance: '15',
         start_date: null,
         end_date: null,
-        comment: "",
-      },
-    };
+        comment: ''
+      }
+    }
   },
   methods: {
-    async handleSave() {
-      this.loading = true;
-      // await this.createForm()
-      this.loading = false;
-    },
-    async onSubmit(event) {
-     await this.$refs.createForm.validate(async (valid) => {
+    async onSubmit (event) {
+      await this.$refs.createForm.validate(async (valid) => {
         if (valid) {
-         
-          this.createForm.start_date  = moment(this.createForm.start_date).format('YYYY-MM-DD')
-          this.createForm.end_date  =moment(this.createForm.end_date).format('YYYY-MM-DD')
-         let resp = await this.$axios.post("/absenses", this.createForm)
-        .then((resp) => {
-         alert('Absensce Added Succsfully');
-         this.handleCancel();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          this.createForm.start_date = moment(this.createForm.start_date).format('YYYY-MM-DD')
+          this.createForm.end_date = moment(this.createForm.end_date).format('YYYY-MM-DD')
+          await this.$axios.post('/absenses', this.createForm)
+            .then((resp) => {
+              alert('Absensce Added Succsfully')
+              this.handleCancel()
+            })
+            .catch((error) => {
+              console.log(error)
+            })
         } else {
-          console.log('error submit!!');
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
-    handleCancel(e) {
-      this.$refs.createForm.resetFields();
-    },
-  },
-};
+    handleCancel (e) {
+      this.$refs.createForm.resetFields()
+    }
+  }
+}
 </script>
 
 <style lang="scss">
