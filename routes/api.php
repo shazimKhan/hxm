@@ -11,15 +11,16 @@ use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenseController;
+use App\Http\Controllers\HolidayController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| Hutes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
-|
+|ere is where you can register API routes for your application. These
+| ro
 */
 
 Route::group(['middleware' => 'auth:api'], function () {
@@ -46,6 +47,8 @@ Route::group(['middleware' => 'guest:api'], function () {
 
     Route::post('absenses', [AbsenseController::class, 'absenses']);
     Route::get('getData', [AbsenseController::class, 'getAbsenses']);
+
+    Route::post('saveHolidayCalender', [HolidayController::class, 'saveHolidayCalender']);
 
 });
 

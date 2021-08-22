@@ -34,6 +34,7 @@
     "sweetalert2": "^10.10.4",
     "vform": "^1.0.1",
     "vue": "^2.6.12",
+    "vue-axios": "^3.2.5",
     "vue-dnd-zone": "^0.4.0",
     "vue-draggable-card": "0.0.4",
     "vue-horizontal-calendar": "^0.8.2",
