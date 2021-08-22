@@ -50,6 +50,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 
     Route::post('saveHolidayCalender', [HolidayController::class, 'saveHolidayCalender']);
     Route::get('getHolidayCalender', [HolidayController::class, 'getHolidayCalender']);
+    Route::post('deleteHolidayCalender', [HolidayController::class, 'deleteHolidayCalender']);
 
 });
 

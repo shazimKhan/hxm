@@ -21,4 +21,10 @@ class HolidayController extends Controller
          $resp  =HolidayCalender::all();
          return  response()->json(['message'=>'get Calendar','data'=>$resp]);
     }
+    public function deleteHolidayCalender(Request $request)
+    {
+         $holidayCalendar  =HolidayCalender::find($request->holiday_calendar_id);
+         $holidayCalendar->delete();
+         return  response()->json(['message'=>'Calendar Deleted Successfully']);
+    }
 }

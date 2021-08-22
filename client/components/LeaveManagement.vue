@@ -329,11 +329,11 @@
                   <a-select-option value="7"> Eid al-Adha </a-select-option>
                 </a-select>
               </span> -->
-              <span slot="icon">
+              <span slot="icon" slot-scope="text,row">
                 <a-row>
                   <a-col :span="3" class="mr-3">
                     <div class="send-icon">
-                      <a-icon type="delete" />
+                      <a-icon type="delete" @click="deleteHolidayCalender(row.id)" />
                     </div>
                   </a-col>
                   <a-col :span="3" class="mr-2">
@@ -414,7 +414,7 @@ export default {
       holidayLeave: {
         name: '',
         country: '',
-        date_of_holiday: '',
+        date_of_holiday: null,
         external_code: '',
         holiday_name: '',
         holiday_class: ''
@@ -446,21 +446,40 @@ export default {
       const _this = this
       await this.$axios.get('/getHolidayCalender')
         .then((resp) => {
-          console.log(resp.data.data.length)
-          for (let i = 0; i < resp.data.data.length; i++) {
-            _this.data.push({
-              key: i,
-              date_of_holiday: resp.data.data[i].date_of_holiday,
-              holiday_class: resp.data.data[i].holiday_class,
-              holiday: resp.data.data[i].holiday_name
-            })
+          console.log(resp.data.data)
+          if (resp.data.data.length > 0) {
+            for (let i = 0; i < resp.data.data.length; i++) {
+              _this.data.push({
+                key: i,
+                id: resp.data.data[i].id,
+                date_of_holiday: resp.data.data[i].date_of_holiday,
+                holiday_class: resp.data.data[i].holiday_class,
+                holiday: resp.data.data[i].holiday_name
+              })
+            }
+          } else {
+            this.data = []
           }
         })
         .catch((error) => {
           console.log(error)
-
           // alert(error.message)
         })
+    },
+    async deleteHolidayCalender (id) {
+      const confirm = window.confirm('Are you sure want to delete?')
+      if (confirm === true) {
+        await this.$axios.post('/deleteHolidayCalender', { holiday_calendar_id: id })
+          .then((resp) => {
+            this.getHolidayCalender()
+            alert(resp.data.message)
+          })
+          .catch((error) => {
+            console.log(error)
+
+          // alert(error.message)
+          })
+      }
     },
     handleChange (val) {
       console.log(val)
