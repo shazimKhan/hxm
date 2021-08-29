@@ -1,6 +1,6 @@
 <template>
   <div id="center">
-    <Center/>
+    <Center />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import Center from '@/components/Center'
 export default {
   components: {
-    
+
     Center
   }
 }

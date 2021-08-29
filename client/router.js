@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { scrollBehavior } from '~/utils'
 import VueScrollTo from 'vue-scrollto'
+import { scrollBehavior } from '~/utils'
 Vue.use(VueScrollTo)
 Vue.use(Router)
 
@@ -21,24 +21,22 @@ const routes = [
   { path: '/leave', name: 'leave', component: page('leave/index.vue') },
   { path: '/center', name: 'center', component: page('center') },
   { path: '/supcenter', name: 'supcenter', component: page('supervisor/center') },
-  
-  
 
   {
     path: '/settings',
-    component: 
+    component:
     page('settings/index.vue'),
     children: [
       { path: '', redirect: { name: 'settings.profile' } },
       { path: 'profile', name: 'settings.profile', component: page('settings/profile.vue') },
-      { path: 'password', name: 'settings.password', component: page('settings/password.vue') },
-    ],
-    
+      { path: 'password', name: 'settings.password', component: page('settings/password.vue') }
+    ]
+
   },
 
   {
     path: '/supervisor',
-    component: page( 'supervisor/index.vue'),
+    component: page('supervisor/index.vue'),
     children:
     [
       { path: '', redirect: { name: 'supervisor.index' } },
@@ -47,7 +45,7 @@ const routes = [
   }
 ]
 
-export function createRouter() {
+export function createRouter () {
   return new Router({
     routes,
     scrollBehavior,
