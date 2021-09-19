@@ -21,9 +21,10 @@ const routes = [
   { path: '/leave', name: 'leave', component: page('leave/index.vue') },
   { path: '/center', name: 'center', component: page('center') },
   { path: '/supcenter', name: 'supcenter', component: page('supervisor/center') },
-  { path: '/apply-leave', name: 'applyleaves', component: page ('apply-leave/index.vue') },
-  { path: '/leavelist', name: 'leavelists', component: page ('leavelist/index.vue') },
-  { path: '/leave-approval', name: 'leaveapproves', component: page ('leave-approval/index.vue') },
+  { path: '/apply-leave', name: 'applyleaves', component: page('apply-leave/index.vue') },
+  { path: '/leavelist', name: 'leavelists', component: page('leavelist/index.vue') },
+  { path: '/leave-approval', name: 'leaveapproves', component: page('leave-approval/index.vue') },
+  { path: '/employee', name: 'employee', component: page('employee/index.vue') },
 
   {
     path: '/settings',
