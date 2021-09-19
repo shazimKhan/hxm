@@ -1,54 +1,75 @@
 <template>
-  <div class="leave">
+ <div class="leave">
     <a-card class="teamAbsense">
-      <h3>Team Absense Calender</h3>
+      <h5>Team Absense Calender</h5>
     </a-card>
     <a-card>
-      
       <a-row>
         <a-col :span="5">
           <h6>My Reporting Hirarchy</h6>
-          <a-divider></a-divider>
+          <a-divider></a-divider> 
           <a-row>
-            <a-col :span="10">
+             <a-col :span="6">
               <div>
                 <a-row> 
                     <div class="reporties" v-for="peers in itemList" :key="peers">
-              
-                    <a-avatar :size="35" icon="user" />{{ peers }}
+                    <a-avatar :size="30" icon="user" />{{ peers }}
                     <a-divider></a-divider>
                     </div>
-                    
                 </a-row>
               </div>
             </a-col>
           </a-row>
         </a-col>
-        
-        <a-col :span="19">
+        <a-col :span="16">
           <a-tabs default-active-key="1" >
             <a-tab-pane key="1" tab="My Peers">
-                     <FullCalendar :options="calendarOptions" />          
-            </a-tab-pane>
-            
-            <a-tab-pane key="2" tab="My Direct Reporties">
-              <!-- <a-card> My Direct Reporties 
-                  <ul>
-                      <li v-for="peers in mypeers" :key="peers">
-                        {{ peers }}
-                      </li>
-                  </ul> 
-              </a-card> -->
- <FullCalendar :options="calendarOptions" />   
+              
+<a-row>
+      <a-col :span="8">
+      
+      </a-col>
+      <a-col :span="16">
+        <div class="create-btn text-bottom right">
+            <a-button type="primary">
+              <nuxt-link to="/leave-approval"> Leave Approval for Peers </nuxt-link>
+            </a-button>
+          </div>
+          <br>
+        <div class = " calender">
+      <FullCalendar :options="calendarOptions" /> 
+        </div>
+    </a-col>
+</a-row> 
+ 
+
+          </a-tab-pane>
+          <a-tab-pane key="2" tab="My Direct Reporties">
+      
+<a-row>
+      <a-col :span="8">
+      
+      </a-col>
+      <a-col :span="16">
+         <div class="create-btn text-bottom right">
+            <a-button type="primary">
+              <nuxt-link to="/leave-approval"> Leave Approval For Direct Reporties </nuxt-link>
+            </a-button>
+         </div>
+         <br>
+      <FullCalendar :options="calendarOptions" /> 
+  
+         </a-col>
+         </a-row>   
             </a-tab-pane>
           </a-tabs>
         </a-col>
-      
+        
       </a-row>
     </a-card>
   </div>
-</template>
 
+</template>
 <script>
 // Load CSS from the published version
 
@@ -59,24 +80,81 @@ import interactionPlugin from '@fullcalendar/interaction'
 import Datepicker from "vuejs-datepicker";
 import moment from "moment";
 
-
-
-const calculateRange = (totalDays, startDate) => {
-  let selectedDays = [];
-  for (let i = 1; i <= totalDays; i++) {
-    const calculatedDate = moment().date(i);
-    const finalDate = {
+function calculateRange(totalDays, startDate) {
+  let selectedDays=[]
+  for(let i=1;i<=totalDays;i++) {
+    const calculatedDate=moment().date(i)
+    const finalDate={
       day: calculatedDate.format("D"),
       dayName: calculatedDate.format("ddd"),
       fullDate: calculatedDate,
-      isHoliday:
-        calculatedDate.format("ddd") === "Sat" ||
-        calculatedDate.format("ddd") === "Sun",
-    };
-    selectedDays.push(finalDate);
+      isHoliday: calculatedDate.format("ddd")==="Sat"||
+        calculatedDate.format("ddd")==="Sun",
+    }
+    selectedDays.push(finalDate)
   }
-  return selectedDays;
-};
+  return selectedDays
+}
+const columns = [
+  {
+    dataIndex: 'name',
+  },
+];
+const data = [
+  {
+    name: 'John Brown',
+  },
+  {
+    name: 'Jim Green',
+  },
+  {
+    name: 'Joe Black',
+  },
+  {
+    name: 'Ahmed khan',
+  },
+  {
+    name: 'Tabish Rafique',
+  },
+  {
+    name: 'Usman Khalid',
+  },
+  {
+    name: 'Ali Raza',
+  },
+
+];
+
+const coloumn = [
+  {
+    dataIndex: 'name',
+  },
+];
+const dataa = [
+  {
+    name: 'Imran',
+  },
+  {
+    name: 'Kamran',
+  },
+  {
+    name: 'Imad',
+  },
+  {
+    name: 'Talha',
+  },
+  {
+    name: 'Rafique',
+  },
+  {
+    name: 'Khalid',
+  },
+  {
+    name: 'Raza',
+  },
+
+];
+
 
 export default {
   data() {
@@ -86,11 +164,16 @@ export default {
       selectedOrgs: [],
       size: 'large',
       calendarOptions: {
-        plugins: [ dayGridPlugin, interactionPlugin ],
-        initialView: 'dayGridMonth'
-      }
+      plugins: [ dayGridPlugin, interactionPlugin ],
+      initialView: 'dayGridMonth',
+      },
+      data,
+      columns,
+      coloumn,
+      dataa,
     };
   },
+  
   components: {
     FullCalendar,
     Datepicker,
@@ -104,27 +187,12 @@ export default {
     },
   },
 };
+
 </script>
 <style lang="scss">
 .teamAbsense {
-  padding: 25px;
+  padding: 2px;
   background-color: rgb(206, 218, 240);
-}
-.calender-box{
-    border-left: 1px solid rgba(128, 128, 128, 0.67843);
-    width: 30px;
-    height: 55px;
-    border-right: 1px solid rgba(128, 128, 128, 0.67843);
-}
-.ant-table-thead > tr > th, .ant-table-tbody > tr > td{
-  padding: 0px 16px;
-}
-.calender-col{
-  width:unset;
-}
-.horizontal-calendar{
-  width: 80%;
-  margin-left: 192px;
 }
 
 </style>

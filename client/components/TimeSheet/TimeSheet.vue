@@ -8,12 +8,24 @@
       <a-divider></a-divider>
       <a-row :gutter="24">
         <a-col :span="12">
-          <a-row>
+         <a-row>
             <a-col :span="24" class="calendar">
-              <a-range-picker :open="true" @change="onChange" />
+             <FullCalendar :options="calendarOptions" /> 
             </a-col>
-          </a-row>
-          <a-row :gutter="[16, 16]">
+          </a-row> 
+           <div class="create-btn text-bottom right">
+            <a-button type="primary">
+              <nuxt-link to="/apply-leave"> apply-leave </nuxt-link>
+            </a-button>
+          </div>
+          <br>
+           <div class="create-btn text-bottom right">
+            <a-button type="primary">
+              <nuxt-link to="/leavelist"> leavelist </nuxt-link>
+            </a-button>
+          </div>
+         
+          <!-- <a-row :gutter="[16, 16]">
             <a-col :span="3" class="today">
               <div class="box" />
               <span>Today</span>
@@ -40,7 +52,7 @@
               <div class="box blue" />
               Selected
             </a-col>
-          </a-row>
+          </a-row> -->
         </a-col>
         <a-col :span="12">
           <h5>Balances</h5>
@@ -64,6 +76,7 @@
             <a-button type="primary">
               <nuxt-link to="/create-absence"> Create Absence </nuxt-link>
             </a-button>
+           
           </div>
         </a-col>
       </a-row>
@@ -72,6 +85,29 @@
 </template>
 
 <script>
+import AdminCenter from "@/components/AdminCenter.vue";
+import '@fullcalendar/core/vdom' // solves problem with Vite
+import FullCalendar from '@fullcalendar/vue'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
+import Datepicker from "vuejs-datepicker";
+import moment from "moment";
+
+function calculateRange(totalDays, startDate) {
+  let selectedDays=[]
+  for(let i=1;i<=totalDays;i++) {
+    const calculatedDate=moment().date(i)
+    const finalDate={
+      day: calculatedDate.format("D"),
+      dayName: calculatedDate.format("ddd"),
+      fullDate: calculatedDate,
+      isHoliday: calculatedDate.format("ddd")==="Sat"||
+        calculatedDate.format("ddd")==="Sun",
+    }
+    selectedDays.push(finalDate)
+  }
+  return selectedDays
+}
 const columns = [
   {
     title: "No Events",
@@ -108,9 +144,19 @@ for (let i = 0; i < 5; i++) {
 export default {
   data() {
     return {
+      AdminCenter,
       data,
       columns,
+      calendarOptions: {
+      plugins: [ dayGridPlugin, interactionPlugin ],
+      initialView: 'dayGridMonth',
+      },
     };
+  },
+   components: {
+    FullCalendar,
+    Datepicker,
+    moment,
   },
   methods: {
     onChange(date, dateString) {

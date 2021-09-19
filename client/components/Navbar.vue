@@ -14,8 +14,7 @@
                 <a-select
                   :default-value="moduleList"
                   style="width: 200px"
-                  @change="getModuleValue"
-                >
+                  @change="getModuleValue"  >
                   <a-select-option value="admin-center">
                     Admin Center
                   </a-select-option>
@@ -26,7 +25,7 @@
                     Work Schedule
                   </a-select-option>
                   <a-select-option value="leave-management">
-                    Leave Management
+                    Holiday Calender
                   </a-select-option>
                 </a-select>
               </a-col>
@@ -52,6 +51,7 @@
                 <a-avatar :size="40" icon="user" />
               </a>
               <div class="dropdown-menu">
+                
                 <router-link
                   :to="{ name: 'settings.profile' }"
                   class="dropdown-item pl-3">

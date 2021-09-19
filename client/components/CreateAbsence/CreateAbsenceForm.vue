@@ -84,7 +84,7 @@
                     xs: 24,
                   }"
                 >
-                  <a-input v-model="createForm.available_balance" />
+                  <a-input v-model="createForm.available_balance"/>
                 </a-form-model-item>
               </a-col>
             </a-row>
@@ -268,6 +268,7 @@ export default {
         available_balance: '15',
         start_date: null,
         end_date: null,
+        
         comment: ''
       }
     }

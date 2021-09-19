@@ -5,12 +5,15 @@
 </template>
 
 <script>
-import TimeSheet from '@/components/TimeSheet/TimeSheet'
+import TimeSheet from "@/components/TimeSheet/TimeSheet.vue";
 export default {
+   
   components: {
+    
     TimeSheet
-  }
-}
+  },
+  
+};
 </script>
 
 <style>
