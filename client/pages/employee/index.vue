@@ -6,14 +6,13 @@
 
 <script>
 
-import EmployeeProfile from "@/components/EmployeeProfile.vue";
+import EmployeeProfile from '@/components/EmployeeProfile.vue'
 
 export default {
-    
   components: {
-    EmployeeProfile,
+    EmployeeProfile
   }
-};
+}
 </script>
 
 <style>

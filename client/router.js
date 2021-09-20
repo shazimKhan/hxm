@@ -25,6 +25,7 @@ const routes = [
   { path: '/leavelist', name: 'leavelists', component: page('leavelist/index.vue') },
   { path: '/leave-approval', name: 'leaveapproves', component: page('leave-approval/index.vue') },
   { path: '/employee', name: 'employee', component: page('employee/index.vue') },
+  { path: '/workschedule', name: 'workschedule', component: page('workschedule/index.vue') },
 
   {
     path: '/settings',

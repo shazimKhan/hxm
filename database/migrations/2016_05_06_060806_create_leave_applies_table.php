@@ -14,11 +14,8 @@ class CreateLeaveAppliesTable extends Migration
     {
         Schema::create('leave_applies', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('employeeName');
-            $table->date('leaveType');
             $table->date('dateFrom');
             $table->date('dateTo');
-            $table->date('days');
             $table->date('reason');
             $table->timestamps();
         });
