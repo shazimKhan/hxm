@@ -15,7 +15,6 @@
 const columns = [
    {
     title: 'ID',
-    dataIndex: 'ID',
   },
   
   {
@@ -45,16 +44,13 @@ const columns = [
 const data = [
   {
     key: '1',
-    ID: 1,
+    
   },
   {
     key: '2',
-    ID: 2,
   },
   {
     key: '3',
-    ID: 3,
-
   },
  
 ];

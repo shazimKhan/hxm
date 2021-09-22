@@ -26,6 +26,8 @@ const routes = [
   { path: '/leave-approval', name: 'leaveapproves', component: page('leave-approval/index.vue') },
   { path: '/employee', name: 'employee', component: page('employee/index.vue') },
   { path: '/workschedule', name: 'workschedule', component: page('workschedule/index.vue') },
+  { path: '/leavemanagment', name: 'leavemanagement', component: page('leavemanagment/index.vue') },
+  { path: '/admincenter', name: 'admincenter', component: page('admincenter/index.vue') },
 
   {
     path: '/settings',
