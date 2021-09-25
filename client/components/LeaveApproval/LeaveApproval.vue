@@ -101,27 +101,7 @@ const columns = [
   },
 ];
 const data = [
-  {
-    name: 'John Brown',
-  },
-  {
-    name: 'Jim Green',
-  },
-  {
-    name: 'Joe Black',
-  },
-  {
-    name: 'Ahmed khan',
-  },
-  {
-    name: 'Tabish Rafique',
-  },
-  {
-    name: 'Usman Khalid',
-  },
-  {
-    name: 'Ali Raza',
-  },
+
 
 ];
 
@@ -130,31 +110,6 @@ const coloumn = [
     dataIndex: 'name',
   },
 ];
-const dataa = [
-  {
-    name: 'Imran',
-  },
-  {
-    name: 'Kamran',
-  },
-  {
-    name: 'Imad',
-  },
-  {
-    name: 'Talha',
-  },
-  {
-    name: 'Rafique',
-  },
-  {
-    name: 'Khalid',
-  },
-  {
-    name: 'Raza',
-  },
-
-];
-
 
 export default {
   data() {
@@ -169,8 +124,7 @@ export default {
       },
       data,
       columns,
-      coloumn,
-      dataa,
+    
     };
   },
   

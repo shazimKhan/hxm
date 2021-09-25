@@ -42,8 +42,8 @@
       />
     </a-form-model-item>
     <a-form-model-item label="Days">
-      <a-input-number :min="1" :max="10" :disabled="disabled">
-      </a-input-number>
+    <input id="total_days" name="number_of_days" value="" readonly="readonly"
+     type="text" size="20" class="select2-single form-control"/>
     </a-form-model-item>
     <a-form-model-item label="Reason">
       <a-input v-model="form.name1" />
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       labelCol: { span: 4 },
-      wrapperCol: { span: 14 },
+      wrapperCol: { span: 8 },
       disabled: true,
       form: {
         name: '',
