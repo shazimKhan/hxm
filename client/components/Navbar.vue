@@ -102,20 +102,16 @@ export default {
     ...mapActions({
       changeModule: 'admin-center/changeModule'
     }),
-    getModuleValue (val,) {
+    getModuleValue (val) {
       if (val === 'employee-profile') {
         this.$router.push('/employee')
       }
       // this.changeModule(val)
-      else if ( val === 'work-schedule')
-      { 
+      else if (val === 'work-schedule') {
         this.$router.push('/workschedule')
-      }
-      else if ( val === 'leave-management')
-      {
+      } else if (val === 'leave-management') {
         this.$router.push('/leavemanagment')
-      }
-      else  {
+      } else {
         this.$router.push('/admincenter')
       }
     },
