@@ -9,22 +9,18 @@
   </a-table>
   <LeaveList />
 </div>
- 
 </template>
 <script>
 const columns = [
    {
     title: 'ID',
   },
-  
   {
     title: 'Employee Name',
   },
-  
   {
     title: 'Leave Type',
   },
-  
   {
     title: 'Date From',
   },
@@ -37,35 +33,30 @@ const columns = [
   {
     title: 'Reason',
   },
-    {
-    title: 'Request for Approval',
-  },
-];
+  {
+    title: 'Request for Approval'
+  }
+]
 const data = [
   {
-    key: '1',
-    
+    key: '1'
   },
   {
-    key: '2',
+    key: '2'
   },
   {
-    key: '3',
-  },
- 
-];
+    key: '3'
+  }
+]
 export default {
   data() {
     return {
-        loading: false,
+      loading: false,
       data,
-      columns,
+      columns 
     };
-  },
- };
+  }
+};
 </script>
-
 <style>
-
-
 </style>
