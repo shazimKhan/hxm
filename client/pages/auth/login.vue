@@ -133,7 +133,6 @@ export default {
       } catch (e) {
         return
       }
-
       // Save the token.
       this.$store.dispatch('auth/saveToken', {
         token: data.token,

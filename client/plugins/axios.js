@@ -15,7 +15,6 @@ export default ({ app, store, redirect }) => {
     request.baseURL = process.env.apiUrl
 
     const token = store.getters['auth/token']
-
     if (token) {
       request.headers.common.Authorization = `Bearer ${token}`
     }

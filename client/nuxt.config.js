@@ -64,19 +64,19 @@ module.exports = {
         [
           '@babel/plugin-proposal-private-methods',
           {
-            loose: true,
-          },
-        ],
-      ],
-    },
+            loose: true
+          }
+        ]
+      ]
+    }
   },
   buildModules: [
-    '@nuxtjs/svg','@nuxtjs/color-mode'
+    '@nuxtjs/svg', '@nuxtjs/color-mode'
   ],
 
   hooks: {
     generate: {
-      done(generator) {
+      done (generator) {
         // Copy dist files to public/_nuxt
         if (generator.nuxt.options.dev === false && generator.nuxt.options.mode === 'spa') {
           const publicDir = join(generator.nuxt.options.rootDir, 'public', '_nuxt')

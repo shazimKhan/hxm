@@ -6,10 +6,13 @@
                   :model="form"
                   :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol"
     >
-      <a-form-model-item label="Leave Type" prop="leave_type">
-        <a-select v-model="form.leave_type_id" placeholder="please select your zone">
-          <a-select-option value="shanghai">
-            Zone one
+      <a-form-model-item label="Leave Type" prop="leaveTypeId">
+        <a-select v-model="form.leaveTypeId" placeholder="please select your zone">
+          <a-select-option value="">
+            Select Leave Type
+          </a-select-option>
+          <a-select-option v-for="(leaveType,index) in leaveTypes" :key="index" :value="leaveType.id">
+            {{ leaveType.leave_type }}
           </a-select-option>
         </a-select>
       </a-form-model-item>
@@ -57,6 +60,7 @@
 </template>
 <script>
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -64,8 +68,9 @@ export default {
       wrapperCol: { span: 8 },
       disabled: true,
       loading: false,
+      leaveTypes: null,
       form: {
-        leave_type_id: '',
+        leaveTypeId: '',
         dateFrom: null,
         dateTo: null,
         days: '',
@@ -73,8 +78,7 @@ export default {
       },
       endOpen: false,
       rules: {
-        leave_type: [
-          { required: true, message: 'Please select leave type', trigger: 'change' }
+        leaveTypeId: [{ required: true, message: 'Please select leave type', trigger: 'change' }
         ],
         dateFrom: [{ required: true, message: 'Please select date from', trigger: 'change' }],
         dateTo: [{ required: true, message: 'Please select date to', trigger: 'change' }],
@@ -82,8 +86,49 @@ export default {
       }
     }
   },
-
+  computed: mapGetters({
+    token: 'auth/token'
+  }),
+  mounted () {
+    this.getLeavesType()
+  },
   methods: {
+    async getLeavesType () {
+      await this.$axios.get('/leave-types', {
+        headers: {
+          Authorization: `Bearer ${this.token}`
+        }
+      })
+        .then((resp) => {
+          this.leaveTypes = resp.data.data
+          console.log(resp.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    async applyForLeave () {
+      this.loading = true
+      await this.$axios.post('/apply-leave', this.form,
+        {
+          headers: {
+            Authorization: `Bearer ${this.token}`
+          }
+        })
+        .then((resp) => {
+          console.log(resp)
+          this.loading = false
+          this.$notification.success({
+            message: resp.data.message,
+            description:
+           resp.data.message
+          })
+        })
+        .catch((error) => {
+          this.loading = false
+          console.log(error)
+        })
+    },
     moment,
     dateFrom (value) {
       this.countDays()
@@ -98,7 +143,8 @@ export default {
     onSubmit () {
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
-          alert('submit!')
+          this.applyForLeave()
+          this.resetForm()
         } else {
           console.log('error submit!!')
           return false
@@ -135,7 +181,7 @@ export default {
         const dateFrom = moment(this.form.dateFrom)
         const dateTo = moment(this.form.dateTo)
         const days = moment.duration(dateTo.diff(dateFrom)).asDays()
-        this.form.days = days
+        this.form.days = days.toFixed()
       }
     }
   }

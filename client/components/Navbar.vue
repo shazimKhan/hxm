@@ -82,11 +82,11 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import LocaleDropdown from './LocaleDropdown'
+// import LocaleDropdown from './LocaleDropdown'
 
 export default {
   components: {
-    LocaleDropdown
+    // LocaleDropdown
   },
 
   data: () => ({
@@ -105,9 +105,7 @@ export default {
     getModuleValue (val) {
       if (val === 'employee-profile') {
         this.$router.push('/employee')
-      }
-      // this.changeModule(val)
-      else if (val === 'work-schedule') {
+      } else if (val === 'work-schedule') {
         this.$router.push('/workschedule')
       } else if (val === 'leave-management') {
         this.$router.push('/leavemanagment')

@@ -12,6 +12,7 @@ use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenseController;
 use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\LeaveController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,7 +28,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', [LoginController::class, 'logout']);
 
     Route::get('user', [UserController::class, 'current']);
-
+    Route::get('leave-types',[LeaveController::class,'getLeavesType']);
+    Route::post('apply-leave',[LeaveController::class,'applyLeave']);
+    Route::get('get-all-leaves',[LeaveController::class,'getAllLeaves']);
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
 });
