@@ -8,8 +8,9 @@
 import LeaveApprove from '@/components/LeaveApprove/LeaveApprove'
 export default {
   components: {
-    LeaveApprove,
-  }
+    LeaveApprove
+  },
+  middleware: ['auth', 'check-role']
 }
 </script>
 

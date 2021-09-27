@@ -30,7 +30,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('user', [UserController::class, 'current']);
     Route::get('leave-types',[LeaveController::class,'getLeavesType']);
     Route::post('apply-leave',[LeaveController::class,'applyLeave']);
-    Route::get('get-all-leaves',[LeaveController::class,'getAllLeaves']);
+    Route::get('get-all-leaves',[LeaveController::class,'getMyLeaves']);
+    Route::post('approved-reject-leave',[LeaveController::class,'approvedRejectLeave']);
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
 });

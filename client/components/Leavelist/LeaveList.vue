@@ -3,7 +3,7 @@
     <h2> My Leave Lists </h2>
     <br>
 
-    <a-table :columns="columns" :data-source="data">
+    <a-table :loading="loading" :columns="columns" :data-source="data">
       <a slot="status" slot-scope="status">
         <span v-if="status ==false">
           <a-badge
@@ -82,6 +82,7 @@ export default {
   },
   methods: {
     async getMyLeaves () {
+      this.loading = true
       await this.$axios.get('/get-all-leaves', {
         headers: {
           Authorization: `Bearer ${this.token}`
@@ -101,7 +102,7 @@ export default {
               }
             )
           })
-
+          this.loading = false
           console.log(resp.data)
         })
         .catch((error) => {

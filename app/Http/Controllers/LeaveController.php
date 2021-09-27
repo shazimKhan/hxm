@@ -32,9 +32,22 @@ class LeaveController extends Controller
             ]);
          return  response()->json(['status'=>true,'message'=>'Apply Leave successfully']);
     }
-    public function getAllLeaves(Request $request)
+    public function getMyLeaves(Request $request)
     {
-         $resp  =EmployeeLeave::with('leaveType')->get();
-         return  response()->json(['status'=>true,'message'=>'Get All Leaves','data'=>$resp]);
+         $user  = auth('api')->user();
+         if($user->role->name == 'Employee'){
+            $leaves  = EmployeeLeave::with(['leaveType'])->where(['user_id'=>$user->id])->get();
+         }else{
+            $leaves  = EmployeeLeave::with(['leaveType','user'])->get();
+         }
+      
+         return  response()->json(['status'=>true,'message'=>'Get My Leaves','data'=>$leaves]);
+    }
+    public function approvedRejectLeave(Request $request){
+        $leave = EmployeeLeave::find($request->leave_id);
+        $leave->status = $request->status;
+        $leave->save();
+        return  response()->json(['status'=>true,'message'=>'Leave '.$request->status==1?'Approved':'DisApprove'.' successfully']);
+
     }
 }
