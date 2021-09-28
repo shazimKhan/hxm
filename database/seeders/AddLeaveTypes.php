@@ -24,7 +24,7 @@ class AddLeaveTypes extends Seeder
             'description'=>'test'
         ],
         [
-            'leave_type'=>'Weeding Leave', 
+            'leave_type'=>'Wedding Leave', 
             'description'=>'test'
         ],
         [

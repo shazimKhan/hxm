@@ -5,21 +5,31 @@
 
     <a-table :loading="loading" :columns="columns" :data-source="data">
       <a slot="status" slot-scope="status">
-        <span v-if="status ==false">
+        <span v-if="status == 1">
           <a-badge
-            count="Pending"
+            count="Approved"
             :number-style="{
-              backgroundColor: '#52c41a',
+              backgroundColor: '#00ffff',
               color: '#999',
               boxShadow: '0 0 0 1px #d9d9d9 inset',
             }"
           />
         </span>
-        <span v-else>
+        <span v-else-if="status == 2">
           <a-badge
-            count="Approved"
+            count="DisApproved"
             :number-style="{
-              backgroundColor: '#52c41a',
+              backgroundColor: '#00ffff',
+              color: '#999',
+              boxShadow: '0 0 0 1px #d9d9d9 inset',
+            }"
+          />
+        </span>
+          <span v-else>
+          <a-badge
+            count="Pending"
+            :number-style="{
+              backgroundColor: '#00ffff',
               color: '#999',
               boxShadow: '0 0 0 1px #d9d9d9 inset',
             }"
@@ -37,13 +47,11 @@ const columns = [
     dataIndex: 'key',
     key: 'key'
   },
-
   {
     title: 'Leave Type',
     dataIndex: 'leave_type',
     key: 'leave_type '
   },
-
   {
     title: 'Date From',
     dataIndex: 'date_from',
@@ -109,12 +117,9 @@ export default {
           console.log(error)
         })
     }
-
   }
-
 }
 </script>
 
 <style>
-
 </style>
