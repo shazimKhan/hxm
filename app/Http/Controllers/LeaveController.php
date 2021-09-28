@@ -47,7 +47,12 @@ class LeaveController extends Controller
         $leave = EmployeeLeave::find($request->leave_id);
         $leave->status = $request->status;
         $leave->save();
-        return  response()->json(['status'=>true,'message'=>'Leave '.$request->status==1?'Approved':'DisApprove'.' successfully']);
+        if($request->status==1){
+            $status = 'Approved';
+        }else if($request->status==2){
+            $status = 'DisApproved';
+        }
+        return  response()->json(['status'=>true,'message'=>'Leave '.$status. ' Successfully']);
 
     }
 }
