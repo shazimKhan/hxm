@@ -17,7 +17,7 @@
         </span>
         <span v-else-if="status == 2">
           <a-badge
-            count="DisApproved"
+            count="Rejected"
             :number-style="{
               backgroundColor: '#00ffff',
               color: '#999',

@@ -7,17 +7,17 @@
       <a-dropdown slot="status" slot-scope="status,row">
         <a-menu slot="overlay">
           <a-menu-item key="1" @click="approveRejectLeave(1,row.id)">
-            Approved
+            Approve
           </a-menu-item>
           <a-menu-item key="2" @click="approveRejectLeave(2,row.id)">
-            DisApprove
+            Reject
           </a-menu-item>
         </a-menu>
         <a-button v-if="status ==1" type="primary" style="margin-left: 8px">
-          Approved <a-icon type="down" />
+          Approve <a-icon type="down" />
         </a-button>
         <a-button v-else-if="status == 2" type="danger" style="margin-left: 8px">
-          DisApprove <a-icon type="down" />
+          Reject <a-icon type="down" />
         </a-button>
         <a-button v-else type="primary" style="margin-left: 8px">
           Pending <a-icon type="down" />

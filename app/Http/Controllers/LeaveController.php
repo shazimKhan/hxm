@@ -50,7 +50,7 @@ class LeaveController extends Controller
         if($request->status==1){
             $status = 'Approved';
         }else if($request->status==2){
-            $status = 'DisApproved';
+            $status = 'Rejected';
         }
         return  response()->json(['status'=>true,'message'=>'Leave '.$status. ' Successfully']);
 
