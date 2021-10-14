@@ -11,7 +11,7 @@
             :number-style="{
               backgroundColor: '#00ffff',
               color: '#999',
-              boxShadow: '0 0 0 1px #d9d9d9 inset',
+              boxShadow: '1 1 1 2px #d9d9d9 inset',
             }"
           />
         </span>
@@ -21,7 +21,7 @@
             :number-style="{
               backgroundColor: '#00ffff',
               color: '#999',
-              boxShadow: '0 0 0 1px #d9d9d9 inset',
+              boxShadow: '1 1 1 2px #d9d9d9 inset',
             }"
           />
         </span>
@@ -31,7 +31,7 @@
             :number-style="{
               backgroundColor: '#00ffff',
               color: '#999',
-              boxShadow: '0 0 0 1px #d9d9d9 inset',
+              boxShadow: '1 1 1 2px #d9d9d9 inset',
             }"
           />
         </span>
