@@ -28,6 +28,9 @@
               <a-select-option value="leave-management">
                 Holiday Calender
               </a-select-option>
+               <a-select-option value="reporting-table">
+                Reporting
+              </a-select-option>
             </a-select>
           </a-col>
         </div>
@@ -109,8 +112,10 @@ export default {
         this.$router.push('/workschedule')
       } else if (val === 'leave-management') {
         this.$router.push('/leavemanagment')
-      } else {
+      } else if (val === 'admin') {
         this.$router.push('/admincenter')
+      }else{
+        this.$router.push('/reporting')
       }
     },
     async logout () {

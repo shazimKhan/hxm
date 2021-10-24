@@ -10,7 +10,6 @@ const page = path => () => import(`~/pages/${path}`).then(m => m.default || m)
 const routes = [
 
   { path: '/login', name: 'login', component: page('auth/login.vue') },
-  // { path: '/register', name: 'register', component: page('auth/register.vue') },
   { path: '/password/reset', name: 'password.request', component: page('auth/password/email.vue') },
   { path: '/password/reset/:token', name: 'password.reset', component: page('auth/password/reset.vue') },
   { path: '/email/verify/:id', name: 'verification.verify', component: page('auth/verification/verify.vue') },
@@ -28,6 +27,7 @@ const routes = [
   { path: '/workschedule', name: 'workschedule', component: page('workschedule/index.vue') },
   { path: '/leavemanagment', name: 'leavemanagement', component: page('leavemanagment/index.vue') },
   { path: '/admincenter', name: 'admincenter', component: page('admincenter/index.vue') },
+  { path: '/reporting', name: 'reporting', component: page('reporting/index.vue') },
 
   {
     path: '/settings',
