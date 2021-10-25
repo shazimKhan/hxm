@@ -28,6 +28,8 @@ const routes = [
   { path: '/leavemanagment', name: 'leavemanagement', component: page('leavemanagment/index.vue') },
   { path: '/admincenter', name: 'admincenter', component: page('admincenter/index.vue') },
   { path: '/reporting', name: 'reporting', component: page('reporting/index.vue') },
+  { path: '/tabular-reports', name: 'tabular-reports', component: page('tabular-reports/index.vue') },
+  { path: '/graphical-reports', name: 'graphical-reports', component: page('graphical-reports/index.vue') }, 
 
   {
     path: '/settings',

@@ -112,7 +112,7 @@ export default {
         this.$router.push('/workschedule')
       } else if (val === 'leave-management') {
         this.$router.push('/leavemanagment')
-      } else if (val === 'admin') {
+      } else if (val === 'admin-center') {
         this.$router.push('/admincenter')
       }else{
         this.$router.push('/reporting')

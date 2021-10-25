@@ -4,7 +4,7 @@
     <WorkSchedule v-else-if="moduleList == 'work-schedule'" />
     <LeaveManagement v-else-if="moduleList == 'leave-management'" />
     <EmployeeProfile v-else-if="moduleList == 'employee-profile'" />
-    <TimeSheet v-else />
+    <Reporting v-else />
   </div>
 </template>
 
@@ -14,15 +14,14 @@ import AdminCenter from '@/components/AdminCenter.vue'
 import WorkSchedule from '@/components/WorkSchedule.vue'
 import LeaveManagement from '@/components/LeaveManagement.vue'
 import EmployeeProfile from '@/components/EmployeeProfile.vue'
-import TimeSheet from '@/components/TimeSheet/TimeSheet.vue'
+import Reporting from '@/components/Reporting.vue'
 export default {
   components: {
     AdminCenter,
     WorkSchedule,
     LeaveManagement,
     EmployeeProfile,
-    TimeSheet
-
+    Reporting
   },
   middleware: 'auth',
   computed: mapGetters({
