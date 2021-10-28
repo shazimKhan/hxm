@@ -30,7 +30,9 @@ const routes = [
   { path: '/reporting', name: 'reporting', component: page('reporting/index.vue') },
   { path: '/tabular-reports', name: 'tabular-reports', component: page('tabular-reports/index.vue') },
   { path: '/graphical-reports', name: 'graphical-reports', component: page('graphical-reports/index.vue') }, 
-
+  { path: '/tabular-selected', name: 'tabular-selected', component: page('tabular-selected/index.vue') },
+  { path: '/graphical-selected', name: 'graphical-selected', component: page('graphical-selected/index.vue') },
+  
   {
     path: '/settings',
     component:
