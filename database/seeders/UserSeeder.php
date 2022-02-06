@@ -18,17 +18,17 @@ class UserSeeder extends Seeder
             [
             'name' => 'Admin ',
             'email' => 'admin@hxm.com',
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('admin123'),
             ],
             [
                 'name' => 'Employee',
                 'email' => 'employee@hxm.com',
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('emp123'),
             ],
             [
                 'name' => 'Supervisor',
                 'email' => 'supervisor@hxm.com',
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('super123'),
             ],
         ]);
     }

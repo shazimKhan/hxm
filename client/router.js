@@ -2,6 +2,33 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueScrollTo from 'vue-scrollto'
 import { scrollBehavior } from '~/utils'
+
+// import VueToast from 'vue-toast-notification';
+// // Import any of available themes
+// import 'vue-toast-notification/dist/theme-default.css';
+// import 'vue-toast-notification/dist/theme-sugar.css';
+
+import 'font-awesome/css/font-awesome.min.css'
+import Vuetify from 'vuetify/lib';
+
+Vue.use(Vuetify);
+
+export default new Vuetify({
+  icons: {
+    iconfont: 'mdiSvg' || 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+  },
+});
+
+// Vue.use(VueToast, {
+//   // One of options
+//   position: 'top',
+//   message: '',
+//   type: 'default',
+//   position: 'top-right',
+//   duration: 2000,
+//   queue: true
+// })
+
 Vue.use(VueScrollTo)
 Vue.use(Router)
 
@@ -14,11 +41,11 @@ const routes = [
   { path: '/password/reset/:token', name: 'password.reset', component: page('auth/password/reset.vue') },
   { path: '/email/verify/:id', name: 'verification.verify', component: page('auth/verification/verify.vue') },
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
-  { path: '/', name: 'admin', component: page('admin.vue') },
+  { path: '/home', name: 'home', component: page('admin.vue') },
   { path: '/time-sheet', name: 'timesheet', component: page('time-sheet/index.vue') },
   { path: '/create-absence', name: 'createabsence', component: page('create-absence/index.vue') },
   { path: '/leave', name: 'leave', component: page('leave/index.vue') },
-  { path: '/center', name: 'center', component: page('center') },
+  // { path: '/center', name: 'center', component: page('admin/index.vue') },
   { path: '/supcenter', name: 'supcenter', component: page('supervisor/center') },
   { path: '/apply-leave', name: 'applyleaves', component: page('apply-leave/index.vue') },
   { path: '/leavelist', name: 'leavelists', component: page('leavelist/index.vue') },
@@ -32,6 +59,16 @@ const routes = [
   { path: '/graphical-reports', name: 'graphical-reports', component: page('graphical-reports/index.vue') }, 
   { path: '/tabular-selected', name: 'tabular-selected', component: page('tabular-selected/index.vue') },
   { path: '/graphical-selected', name: 'graphical-selected', component: page('graphical-selected/index.vue') },
+
+  {
+    path: '/admin',
+    name: 'admin',
+    component: page('admin/index.vue'),
+    children: [
+      { path: 'importTable', name: 'admin.importTable', component: page('admin/importTable.vue') },
+      { path: 'importData', name: 'admin.importData', component: page('admin/importData.vue') }
+    ]
+  },
   
   {
     path: '/settings',

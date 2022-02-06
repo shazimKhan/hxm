@@ -1,0 +1,133 @@
+// .card {
+//   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+// }
+
+:root {
+  --color: #243746;
+  --color-primary: #158876;
+  --color-secondary: #0e2233;
+  --bg: #f3f5f4;
+  --bg-secondary: #fff;
+  --border-color: #ddd;
+}
+
+.light-mode {
+  --color-primary: #41b38a;
+  --border-color: #0d2538;
+
+  .v-navigation-drawer{
+    background-color:#627997 !important;
+  }
+
+  .v-app-bar{
+    background-color:#627997 !important;
+  }
+
+}
+
+.dark-mode {
+  --color: #ebf4f1;
+  --color-primary: #41b38a;
+  --color-secondary: #fdf9f3;
+  --bg: #363738;
+  --bg-secondary: #293138;
+  --border-color: #0d2538;
+
+  // .bg-info {
+  //   background-color:#0c0c11 !important;
+  //   color: white;
+  // }
+
+  .v-app-bar{
+    background-color:#0c0c11 !important;
+    color: white;
+    .v-icon, .v-btn{
+      color: white;
+    }
+  }
+
+  #app{
+    background-color: rgb(95, 93, 93);
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  body {
+    background-color: rgb(95, 93, 93);
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  // .header{
+  //   border: 1px solid rgb(10, 10, 10);
+  // }
+
+  .v-data-table {
+    background-color: rgb(95, 93, 93);
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .v-card {
+    background-color: rgb(95, 93, 93);
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .v-list {
+    background-color: rgb(95, 93, 93);
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+}
+
+
+
+.sepia-mode {
+  --color: #433422;
+  --color-secondary: #504231;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+
+  // .bg-info {
+  //   background-color:#ad7127 !important;
+  // }
+  #app{
+    background-color: rgb(209, 174, 128);
+    font-family: "Arial, Helvetica, sans-serif";
+  }
+
+  body{
+    background-color: rgb(209, 174, 128);
+    font-family: "Arial, Helvetica, sans-serif";
+  }
+
+  .v-navigation-drawer{
+    background-color:#ad7127 !important;
+  }
+
+  .v-app-bar{
+    background-color:#ad7127 !important;
+  }
+
+  .v-data-table {
+    background-color: rgb(209, 174, 128);
+    color: black;
+    font-family: "Arial, Helvetica, sans-serif";
+    // transition: background-color 0.3s;
+    // font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .v-card {
+    background-color: rgb(209, 174, 128);
+    color: black;
+    font-family: "Arial, Helvetica, sans-serif";
+  }
+
+  .v-list {
+    background-color: rgb(209, 174, 128);
+    color: black;
+    font-family: "Arial, Helvetica, sans-serif";
+  }
+
+}

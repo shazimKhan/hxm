@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenseController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\ExcelController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -55,6 +57,10 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('saveHolidayCalender', [HolidayController::class, 'saveHolidayCalender']);
     Route::get('getHolidayCalender', [HolidayController::class, 'getHolidayCalender']);
     Route::post('deleteHolidayCalender', [HolidayController::class, 'deleteHolidayCalender']);
+
+    Route::post('import-table', [ExcelController::class,'importTable']);
+    Route::post('import-data', [ExcelController::class,'importData']);
+    Route::post('import-form', [ExcelController::class,'importForm']);
 
 });
 

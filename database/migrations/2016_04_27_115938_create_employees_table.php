@@ -44,7 +44,7 @@ class CreateEmployeesTable extends Migration
             $table->string('notice_period')->nullable();
             $table->date('last_working_day')->nullable();
             $table->tinyInteger('full_final')->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

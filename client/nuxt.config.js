@@ -1,6 +1,6 @@
-require('dotenv').config()
-const { join } = require('path')
-const { copySync, removeSync } = require('fs-extra')
+// require('dotenv').config()
+// const { join } = require('path')
+// const { copySync, removeSync } = require('fs-extra')
 
 module.exports = {
   ssr: false,
@@ -45,7 +45,7 @@ module.exports = {
     '~plugins/fontawesome',
     '~plugins/nuxt-client-init',
     { src: '~plugins/bootstrap', mode: 'client' },
-    { src: '~plugins/ant-design-vue', mode: 'client' }
+    { src: '~plugins/ant-design-vue', mode: 'client' },
   ],
 
   modules: [
@@ -71,7 +71,9 @@ module.exports = {
     }
   },
   buildModules: [
-    '@nuxtjs/svg', '@nuxtjs/color-mode'
+    '@nuxtjs/svg',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/vuetify',
   ],
 
   hooks: {

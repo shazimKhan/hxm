@@ -1,10 +1,10 @@
 
 <template>
 <div class="theme">
-    <ColorModePicker />
+    <!-- <ColorModePicker /> -->
     
   <div>
-    <a-divider></a-divider>
+    <!-- <a-divider></a-divider> -->
     <div class="row">
       <div class="col-6">
         <h3>To Do</h3>

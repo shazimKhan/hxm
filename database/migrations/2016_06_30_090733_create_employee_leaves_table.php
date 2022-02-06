@@ -14,7 +14,7 @@ class CreateEmployeeLeavesTable extends Migration
     {
         Schema::create('employee_leaves', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->integer('tl_id')->unsigned();
             $table->integer('manager_id')->unsigned();
             $table->integer('leave_type_id')->unsigned();

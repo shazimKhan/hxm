@@ -41,7 +41,7 @@
       </a-form-model-item>
       <a-form-model-item label="Days">
         <input id="total_days" v-model="form.days" readonly="readonly"
-               type="text" size="20" class="select2-single form-control"
+          type="text" size="20" class="select2-single form-control"
         >
       </a-form-model-item>
       <a-form-model-item label="Reason" prop="reason">
@@ -136,9 +136,11 @@ export default {
       this.form.dateFrom = moment(value).format('YYYY-MM-DD')
     },
     dateTo (value) {
+
       this.countDays()
       this.form.dateTo = ''
       this.form.dateTo = moment(value).format('YYYY-MM-DD')
+      
     },
     onSubmit () {
       this.$refs.ruleForm.validate((valid) => {
