@@ -77,11 +77,11 @@ class ExcelImportTable implements ToCollection
                             $table->$value1($value2,[$value5])->comment = $value7;
                             // $table->$value1($value2,'Active, Inactive')->comment = $value7;
                         } 
-                        else if($value1== 'User'){
-                            $table->bigInteger($value2)->length(10)->unsigned()->comment = $value7;
-                            // $table->foreign($value2)->references('id')->on('users');
-                        }
-                        else if($value1== 'PICKLIST' || $value1== 'Picklist'){
+                        // else if($value1== 'User'){
+                        //     $table->bigInteger($value2)->length(10)->unsigned()->comment = $value7;
+                        //     // $table->foreign($value2)->references('id')->on('users');
+                        // }
+                        else if($value1== 'PICKLIST' || $value1== 'Picklist' || $value1== 'User'){
                             $table->integer($value2)->length(10)->unsigned()->comment = $value7;
                             // $table->integer($value2,'10')->comment = $value7;
                         }
@@ -128,15 +128,15 @@ class ExcelImportTable implements ToCollection
                         else if($value1== 'Attachment'){
                             $table->binary($value2)->nullable()->comment = $value7;
                         } 
-                        else if($value1== 'PICKLIST' || $value1== 'Picklist'){
+                        else if($value1== 'PICKLIST' || $value1== 'Picklist' || $value1== 'User'){
                             $table->integer($value2)->length(10)->unsigned()->nullable()->comment = $value7;
                             // $table->integer($value2,'11')->nullable()->comment = $value7;
                             // $table->foreign($value2)->references('id')->on('picklist');
                         }
-                        else if($value1== 'User'){
-                            $table->bigInteger($value2)->length(10)->unsigned()->nullable()->comment = $value7;
-                            // $table->foreign($value2)->references('id')->on('users');
-                        }
+                        // else if($value1== 'User'){
+                        //     $table->integer($value2)->length(10)->unsigned()->nullable()->comment = $value7;
+                        //     // $table->foreign($value2)->references('id')->on('users');
+                        // }
                         // else if($value1== 'LONG'){
                         //     $table->LONGTEXT($value2,$value3)->nullable()->comment = $value7;
                         // }

@@ -12,6 +12,8 @@ use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenseController;
 use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\WorkScheduleController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\ExcelController;
 
@@ -57,6 +59,11 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('saveHolidayCalender', [HolidayController::class, 'saveHolidayCalender']);
     Route::get('getHolidayCalender', [HolidayController::class, 'getHolidayCalender']);
     Route::post('deleteHolidayCalender', [HolidayController::class, 'deleteHolidayCalender']);
+
+    Route::post('workschedule', [WorkScheduleController::class, 'saveWorkSchedule']);
+
+    Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
 
     Route::post('import-table', [ExcelController::class,'importTable']);
     Route::post('import-data', [ExcelController::class,'importData']);

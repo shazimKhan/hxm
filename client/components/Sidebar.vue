@@ -122,9 +122,16 @@
 
           <v-list-item link :to="{ name: 'admin' }">
             <v-list-item-icon>
+              <v-icon>fa fa-file</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Import Files</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item link :to="{ name: 'supervisor.index' }">
+            <v-list-item-icon>
               <v-icon>fa fa-user</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Admin</v-list-item-title>
+            <v-list-item-title>Supervisor</v-list-item-title>
           </v-list-item>
           
           <v-list-item link @click.prevent="logout">

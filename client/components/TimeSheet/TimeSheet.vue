@@ -9,7 +9,7 @@
       <a-row :gutter="24">
         <a-col :span="12">
          <a-row>
-          <div class="create-btn text-bottom right">
+          <!-- <div class="create-btn text-bottom right">
             <a-button type="primary">
         <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
         </a-button>
@@ -19,7 +19,7 @@
          <a-button type="primary">
            <nuxt-link to="/leavelist"> Leave List </nuxt-link>
             </a-button>
-         </div>
+         </div> -->
             <a-col :span="24" class="calendar">
            <FullCalendar :options="calendarOptions" /> 
             </a-col>
@@ -75,7 +75,17 @@
             <a-button type="primary">
               <nuxt-link to="/create-absence"> Create Absence </nuxt-link>
             </a-button>
-           
+             <br>
+            <a-button type="primary">
+        <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
+        </a-button>
+        
+          <br>
+        
+            <a-button type="primary">
+           <nuxt-link to="/leavelist"> Leave List </nuxt-link>
+            </a-button>
+       
           </div>
         </a-col>
       </a-row>

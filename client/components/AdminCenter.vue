@@ -119,7 +119,7 @@
         <a-card title="Admin Center" :bordered="false" >
           <h1><a-icon type="setting" theme="filled" /></h1>
           <a-divider></a-divider>
-          <h6><nuxt-link to="/center">Admin Center</nuxt-link></h6>
+          <h6><nuxt-link to="/supcenter">Admin Center</nuxt-link></h6>
         </a-card>
       </a-col>
       <a-col :span="8">

@@ -1,6 +1,9 @@
 <template>
 
  <div class='a'>
+   <a-card class="title">
+        <h4>Generate Reports</h4>
+    </a-card>
     <a-button class ="b">    
         <nuxt-link to="/tabular-reports"> Tabular Reports</nuxt-link>
     </a-button>
@@ -21,19 +24,19 @@ export default {
   margin: 60px;
   padding: 80px;
   width: 90%;
-  color:aqua ;
+  color:rgb(0, 153, 255) ;
 }
 .b
 {
-  height: 270px;
-   width: 40%;
+  height: 90px;
+   width: 30%;
    margin: 70px;
-   background-color: aqua ;
+   background-color: #346596 !important ;
 }
 .c
 {
-  height: 270px;
-  width: 40%;
-   background-color: aqua ;
+  height: 90px;
+  width: 30%;
+   background-color:#346596 !important  ;
 }
 </style>

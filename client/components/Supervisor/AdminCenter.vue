@@ -1,8 +1,8 @@
 <template>
     <div class="supcenter">
-      <a-card class="c">
+      <!-- <a-card class="c">
       <h3>Supervisor Admin Center</h3>
-    </a-card>
+    </a-card> -->
 
   <div style="padding: 20px;">
     <a-row :gutter="16">

@@ -1,5 +1,10 @@
 <template>
 <div class="ab" >
+  <div>
+    <a-card class="title">
+        <h4>Generate Reports</h4>
+    </a-card>
+  </div>
     <a-card class="aa" title="Tables Names">
       <a-button type="link" :size="size">
       Employee Info-At Hire
@@ -17,7 +22,7 @@
       Email Info
     </a-button><br>
      </a-card>
-    <button class="btn">    
+    <!-- <button class="btn">    
     <a-button> > </a-button> <br>
     <a-button>
     >>
@@ -37,7 +42,7 @@
     </a-card>
     <a-button class="cc" type="primary">
       <nuxt-link to="/graphical-selected"> Next</nuxt-link>
-    </a-button>
+    </a-button> -->
 </div> 
 </template>
 <script>

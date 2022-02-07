@@ -64,7 +64,7 @@
         <v-list-item :to="{ name: 'admin' }" active-class="blue--text">
           <v-list-item-title>
             <v-icon>fa fa-user</v-icon>
-            Admin
+            Import Files
           </v-list-item-title>
         </v-list-item>
          <v-list-item :to="{ name: 'supervisor.index' }" active-class="blue--text">

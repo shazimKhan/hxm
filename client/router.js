@@ -45,7 +45,7 @@ const routes = [
   { path: '/time-sheet', name: 'timesheet', component: page('time-sheet/index.vue') },
   { path: '/create-absence', name: 'createabsence', component: page('create-absence/index.vue') },
   { path: '/leave', name: 'leave', component: page('leave/index.vue') },
-  // { path: '/center', name: 'center', component: page('admin/index.vue') },
+  { path: '/center', name: 'center', component: page('admin/index.vue') },
   { path: '/supcenter', name: 'supcenter', component: page('supervisor/center') },
   { path: '/apply-leave', name: 'applyleaves', component: page('apply-leave/index.vue') },
   { path: '/leavelist', name: 'leavelists', component: page('leavelist/index.vue') },
