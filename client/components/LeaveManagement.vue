@@ -288,47 +288,7 @@
               <template slot="title">
                 <h6>Holiday Assignments</h6>
               </template>
-              <!-- <span slot="date">
-                <a-date-picker
-                  :default-value="moment('01/01/2018', dateFormat)"
-                  :format="dateFormat"
-                />
-              </span> -->
-              <!-- <span slot="full">
-                <a-select
-                  default-value="none"
-                  style="width: 50%"
-                  @change="handleChange"
-                >
-                  <a-icon slot="suffixIcon" type="down" />
-                  <a-select-option value="full"> Full </a-select-option>
-                  <a-select-option value="half"> Half </a-select-option>
-                  <a-select-option value="none"> None </a-select-option>
-                </a-select>
-              </span>
-              <span slot="holiday">
-                <a-select
-                  default-value="name"
-                  style="width: 50%"
-                  @change="handleChange"
-                >
-                  <a-icon slot="suffixIcon" type="down" />
-                  <a-select-option value="name">
-                    Select Holiday Name
-                  </a-select-option>
-                  <a-select-option value="1"> Happy New Year </a-select-option>
-                  <a-select-option value="2">
-                    Independence Day
-                  </a-select-option>
-                  <a-select-option value="3"> Labour Day </a-select-option>
-                  <a-select-option value="4"> Pakistan Day </a-select-option>
-                  <a-select-option value="5">
-                    Kashmir Solidarity Day
-                  </a-select-option>
-                  <a-select-option value="6"> Eid al-Fitr </a-select-option>
-                  <a-select-option value="7"> Eid al-Adha </a-select-option>
-                </a-select>
-              </span> -->
+              
               <span slot="icon" slot-scope="text,row">
                 <a-row>
                   <a-col :span="3" class="mr-3">
@@ -348,17 +308,7 @@
                   </a-col>
                 </a-row>
               </span>
-              <!-- <template slot="footer" class="bg-footer">
-                <div class="save-btn text-right">
-                  <a-button type="success">
-                    Reset
-                  </a-button>
-
-                  <a-button type="primary">
-                    Save
-                  </a-button>
-                </div>
-              </template> -->
+             
             </a-table>
           </a-col>
         </a-row>

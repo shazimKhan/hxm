@@ -1,7 +1,7 @@
 <template>
 
 <div class="ab" >
-  ,<div>
+  <div>
     <a-card class="title">
         <h4>Generate Reports</h4>
     </a-card>
@@ -83,7 +83,5 @@ padding: 40px;
 }
 .cc{
 margin: 40px;
-
 }
-
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="applyleaves">
-    <h1> Apply For Leave </h1>
+    <a-card class="title"> <h4>Apply for Leave</h4> </a-card>
     <br>
     <a-form-model ref="ruleForm"
                   :model="form"
@@ -49,10 +49,10 @@
       </a-form-model-item>
       <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
         <a-button type="primary" :loading="loading" @click="onSubmit">
-          Submit
+         <nuxt-link to="/leavelist"> Submit</nuxt-link>
         </a-button>
         <a-button style="margin-left: 10px;">
-          Reset
+           <nuxt-link to="/time-sheet">Cancel</nuxt-link>
         </a-button>
       </a-form-model-item>
     </a-form-model>

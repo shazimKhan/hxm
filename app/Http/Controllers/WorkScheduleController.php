@@ -17,4 +17,15 @@ class WorkScheduleController extends Controller
          return  response()->json(['message'=>'insertedSuccessfully','data'=>$resp]);
     }
     
+    public function getWorkSchedule()
+    {
+         $resp  =WorkSchedule::all();
+         return  response()->json(['message'=>'get Schedule','data'=>$resp]);
+    }
+    public function deleteWorkSchedule(Request $request)
+    {
+         $workSchedule  =WorkSchedule::find($request->workschedule_id);
+         $workSchedule->delete();
+         return  response()->json(['message'=>'Schdeule Deleted Successfully']);
+    }
 }

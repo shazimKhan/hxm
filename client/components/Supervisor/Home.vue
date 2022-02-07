@@ -1,9 +1,7 @@
 <template>
 <div class="suphome">
   <div>
-    <a-card>
-      <h3>SuperVisor Home Page</h3>
-    </a-card>
+    <a-card class="title"> <h4>Home Page</h4> </a-card>
     
     <a-divider></a-divider>
     <div class="row">
@@ -12,7 +10,7 @@
 
     <div class="row">
       <div class="col-6">
-        <h3>My Info</h3>
+        <a-card class="title"> <h4>My Info</h4> </a-card>
         <div style="padding: 20px;">
     <a-row :gutter="15">
       <a-col :span="15">
@@ -83,7 +81,7 @@
 
     <div class="row">
       <div class="col-6">
-        <h3>My Speciality</h3>
+        <a-card class="title"> <h4>Speciality</h4> </a-card>
         <div style="padding: 20px;">
     <a-row :gutter="15">
       <a-col :span="8">

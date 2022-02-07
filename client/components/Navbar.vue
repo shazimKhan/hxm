@@ -17,7 +17,7 @@
               @change="getModuleValue"
             >
               <a-select-option value="admin-center">
-                Admin Center
+                Dashboard
               </a-select-option>
               <a-select-option value="employee-profile">
                 Employee profile

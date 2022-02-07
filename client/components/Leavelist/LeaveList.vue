@@ -1,6 +1,6 @@
 <template>
   <div class="leavelists">
-    <h2> My Leave Lists </h2>
+    <a-card class="title"> <h4>Leave Lists</h4> </a-card>
     <br>
 
     <a-table :loading="loading" :columns="columns" :data-source="data">

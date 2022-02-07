@@ -24,7 +24,7 @@
             </a-col>
             <a-col :span="4" class="pl-4">
               <a-select
-                default-value="name"
+                default-value="No selection"
                 style="width: 100%"
                 @change="handleChange"
               >
@@ -121,18 +121,13 @@
                     <a-select-option value="default">
                       No Selection
                     </a-select-option>
-                    <a-select-option value="simole">
+                    <a-select-option value="Simple">
                       Simple
                     </a-select-option>
-                    <a-select-option value="flexible">
+                    <a-select-option value="Flexible">
                       Flexible
                     </a-select-option>
-                    <!-- <a-select-option value="america">
-                      America
-                    </a-select-option>
-                    <a-select-option value="china">
-                      China
-                    </a-select-option> -->
+                   
                   </a-select>
                 </a-col>
                 <a-col :span="1">
@@ -223,14 +218,14 @@
               :stripped="false"
             >
               <template slot="title">
-                <h6>Holiday Assignments</h6>
+                <h6>Work Schedule Days</h6>
               </template>
              
               <span slot="icon" slot-scope="text,row">
                 <a-row>
                   <a-col :span="3" class="mr-3">
                     <div class="send-icon">
-                      <a-icon type="delete" @click="deleteHolidayCalender(row.id)" />
+                      <a-icon type="delete" @click="deleteWorkSchedule(row.id)" />
                     </div>
                   </a-col>
                   <a-col :span="3" class="mr-2">
@@ -258,24 +253,17 @@
 import moment from 'moment'
 const columns = [
   {
-    title: 'Date Of Holiday',
-    dataIndex: 'date_of_holiday',
-    key: 'date_of_holiday',
-    scopedSlots: { customRender: 'date' },
-    width: 180
-  },
-  {
-    title: 'Holiday Class',
-    dataIndex: 'holiday_class',
+    title: 'Schedule Name',
+    dataIndex: 'externalName',
     scopedSlots: { customRender: 'full' },
-    key: 'holiday_class',
+    key: 'externalName',
     width: 120
   },
   {
-    title: 'Holiday',
-    dataIndex: 'holiday',
-    key: 'holiday',
-    scopedSlots: { customRender: 'holiday' },
+    title: 'Schedule Model',
+    dataIndex: 'model',
+    key: 'model',
+    scopedSlots: { customRender: 'model' },
     width: 250
   },
   {
@@ -306,7 +294,7 @@ export default {
     }
   },
   mounted () {
-    // this.getHolidayCalender()
+     this.getWorkSchedule()
   },
   methods: {
     moment,
@@ -322,13 +310,13 @@ export default {
         .catch((error) => {
           this.loading = false
           console.log(error)
-          alert('Oops someting wrong!!')
+          alert('Oops something wrong!!')
           // alert(error.message)
         })
     },
-    async getHolidayCalender () {
+    async getWorkSchedule () {
       const _this = this
-      await this.$axios.get('/getHolidayCalender')
+      await this.$axios.get('/getWorkSchedule')
         .then((resp) => {
           console.log(resp.data.data)
           if (resp.data.data.length > 0) {
@@ -336,9 +324,8 @@ export default {
               _this.data.push({
                 key: i,
                 id: resp.data.data[i].id,
-                date_of_holiday: resp.data.data[i].date_of_holiday,
-                holiday_class: resp.data.data[i].holiday_class,
-                holiday: resp.data.data[i].holiday_name
+                externalName: resp.data.data[i].externalName,
+                model: resp.data.data[i].model
               })
             }
           } else {
@@ -350,12 +337,12 @@ export default {
           // alert(error.message)
         })
     },
-    async deleteHolidayCalender (id) {
+    async deleteWorkSchedule (id) {
       const confirm = window.confirm('Are you sure want to delete?')
       if (confirm === true) {
-        await this.$axios.post('/deleteHolidayCalender', { holiday_calendar_id: id })
+        await this.$axios.post('/deleteWorkSchedule', { workschedule_id: id })
           .then((resp) => {
-            this.getHolidayCalender()
+            this.getWorkSchedule()
             alert(resp.data.message)
           })
           .catch((error) => {

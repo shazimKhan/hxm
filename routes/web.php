@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
+use mikehaertl\wkhtmlto\Pdf;
+use App\Http\Controllers\GPDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,17 @@ use App\Http\Controllers\PDFController;
 |
 */
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
+// Route::get('/download', function () {
+//     $render = view('chart')->render();
+  
+//         $pdf = new Pdf;
+//         $pdf->addPage($render);
+//         $pdf->setOptions(['javascript-delay' => 5000]);
+//         $pdf->saveAs(public_path('report.pdf'));
+   
+//         return response()->download(public_path('report.pdf'));
 // });
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('preview', [GPDFController::class, 'preview']);
+Route::get('download', [GPDFController::class, 'download'])->name('download');

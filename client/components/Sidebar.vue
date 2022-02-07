@@ -7,15 +7,12 @@
       width="280"
       fixed
       app
-      dark
-    >
-
+      dark>
       <v-list nav>
         <v-app-bar-nav-icon @click="coll"></v-app-bar-nav-icon>
         <nuxt-link
           to="/home"
-          class="navbar-brand text-white"
-        >
+          class="navbar-brand text-white">
           {{ appName }}
         </nuxt-link>
       </v-list>
@@ -43,71 +40,6 @@
         </v-list-item>
       </v-list-group>
     </v-list>
-
-      <!-- <v-list
-        nav
-        dense
-      >
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-folder</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>My Files</v-list-item-title>
-
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-account-multiple</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Shared with me</v-list-item-title>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-star</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Starred</v-list-item-title>
-        </v-list-item>
-      </v-list> -->
-
-      <!-- <template>
-      
-      <ColorModePicker/>
-
-      <v-spacer></v-spacer>
-
-      <a-select
-        :default-value="dropdownList"
-        style="width: 200px"
-        @change="getDropdownValue"
-      >
-        <a-select-option value="none">
-          None
-        </a-select-option>
-        <a-select-option value="payroll">
-          Payroll
-        </a-select-option>
-        <a-select-option value="department">
-          Department
-        </a-select-option>
-      </a-select>
-
-      <a-select
-        :default-value="moduleList"
-        style="width: 200px"
-        @change="getModuleValue"
-      >
-        <a-select-option value="admin-center">
-          Admin Center
-        </a-select-option>
-        <a-select-option value="payroll">
-          Payroll
-        </a-select-option>
-        <a-select-option value="department">
-          Department
-        </a-select-option>
-      </a-select>
-    </template> -->
-
       <template v-slot:append>
         <v-list
           nav

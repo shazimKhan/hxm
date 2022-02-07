@@ -7,7 +7,7 @@
     <!-- <a-divider></a-divider> -->
     <div class="row">
       <div class="col-6">
-        <h3>To Do</h3>
+        <a-card class="title"> <h4>To do</h4> </a-card>
 
         <div style="padding: 10px;">
     <a-row :gutter="10">
@@ -45,7 +45,7 @@
 
     <div class="row">
       <div class="col-6">
-        <h3>My Info</h3>
+        <a-card class="title"> <h4>My Info</h4> </a-card>
         <div style="padding: 20px;">
     <a-row :gutter="15">
       <a-col :span="8">
@@ -112,7 +112,7 @@
 
     <div class="row">
       <div class="col-6">
-        <h3>My Speciality</h3>
+        <a-card class="title"> <h4>My Speciality</h4> </a-card>
         <div style="padding: 20px;">
     <a-row :gutter="15">
       <a-col :span="8">

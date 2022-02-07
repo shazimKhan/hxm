@@ -9,17 +9,7 @@
       <a-row :gutter="24">
         <a-col :span="12">
          <a-row>
-          <!-- <div class="create-btn text-bottom right">
-            <a-button type="primary">
-        <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
-        </a-button>
-        </div>
-          <br>
-        <div class="create-btn text-bottom right">
-         <a-button type="primary">
-           <nuxt-link to="/leavelist"> Leave List </nuxt-link>
-            </a-button>
-         </div> -->
+          
             <a-col :span="24" class="calendar">
            <FullCalendar :options="calendarOptions" /> 
             </a-col>
@@ -68,24 +58,21 @@
             :bordered="false"
             :stripped="false"
           />
-          <div class="show pt-2">
+          <!-- <div class="show pt-2">
             <a href="#"> Show All</a>
-          </div>
-          <div class="create-btn text-right">
-            <a-button type="primary">
+          </div> -->
+          <div class="create-btn-text-right">
+            <!-- <a-button type="primary">
               <nuxt-link to="/create-absence"> Create Absence </nuxt-link>
-            </a-button>
-             <br>
+            </a-button> -->
+             <a-row class="row">
             <a-button type="primary">
-        <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
-        </a-button>
-        
-          <br>
-        
+            <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
+            </a-button>
             <a-button type="primary">
            <nuxt-link to="/leavelist"> Leave List </nuxt-link>
             </a-button>
-       
+            </a-row>
           </div>
         </a-col>
       </a-row>
@@ -180,21 +167,35 @@ export default {
 {
   background-color: rgb(204, 207, 207);
 }
-.calendar {
-  min-height: 315px;
+.create-btn-text-right
+{
+  padding: 1px;
 }
+.calendar {
+  min-height: 300px;
+  
+
+}
+.row
+{
+  margin: 10px;
+  
+}
+
 .ant-calendar-range .ant-calendar-input-wrap {
   display: none;
 }
+.box {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgb(69, 97, 139);
+    margin-right: 7px;
+
+  }
 .today {
   display: inline-flex;
   align-items: center;
-  .box {
-    width: 15px;
-    height: 15px;
-    border: 1px solid #eee;
-    margin-right: 7px;
-  }
+  
   .green {
     background-color: green;
   }

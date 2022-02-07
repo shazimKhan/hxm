@@ -10,12 +10,12 @@ class PDFController extends Controller
     public function generatePDF()
     {
         $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
+            'title' => 'Welcome to HXM Product',
             'date' => date('m/d/Y')
         ];
           
         $pdf = PDF::loadView('myPDF', $data);
     
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download('hxm.pdf');
     }
 }

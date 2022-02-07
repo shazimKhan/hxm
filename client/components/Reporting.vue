@@ -1,9 +1,7 @@
 <template>
 
  <div class='a'>
-   <a-card class="title">
-        <h4>Generate Reports</h4>
-    </a-card>
+   <a-card class="title"> <h4>Generate Reports</h4> </a-card>
     <a-button class ="b">    
         <nuxt-link to="/tabular-reports"> Tabular Reports</nuxt-link>
     </a-button>
@@ -28,7 +26,7 @@ export default {
 }
 .b
 {
-  height: 90px;
+   height: 90px;
    width: 30%;
    margin: 70px;
    background-color: #346596 !important ;
@@ -37,6 +35,6 @@ export default {
 {
   height: 90px;
   width: 30%;
-   background-color:#346596 !important  ;
+  background-color:#346596 !important  ;
 }
 </style>
