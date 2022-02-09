@@ -37,6 +37,7 @@
           </a-row>
         </a-card>
       </a-col>
+      
 
     </a-row>
   </div>
@@ -76,6 +77,18 @@
               <nuxt-link to="/time-sheet">Go to Time Off</nuxt-link>
             </a-col>
           </a-row>
+        </a-card>
+      </a-col>
+      <a-col :span="10">
+        <a-card title="View" :bordered="false">  
+            <a-row>
+            <a-button type="primary">
+            <nuxt-link to="/grid1">View Schedule Table</nuxt-link>
+            </a-button>
+            <a-button type="primary">
+            <nuxt-link to="/grid2">View Holidays Table</nuxt-link>
+            </a-button>
+            </a-row>
         </a-card>
       </a-col>
       <a-col :span="7">

@@ -52,6 +52,8 @@ const routes = [
   { path: '/leave-approval', name: 'leaveapproves', component: page('leave-approval/index.vue') },
   { path: '/employee', name: 'employee', component: page('employee/index.vue') },
   { path: '/workschedule', name: 'workschedule', component: page('workschedule/index.vue') },
+  { path: '/grid1', name: 'grid1', component: page('grid1/grid1.vue') },
+  { path: '/grid2', name: 'grid2', component: page('grid2/grid2.vue') },
   { path: '/leavemanagment', name: 'leavemanagement', component: page('leavemanagment/index.vue') },
   { path: '/admincenter', name: 'admincenter', component: page('admincenter/index.vue') },
   { path: '/reporting', name: 'reporting', component: page('reporting/index.vue') },
@@ -59,6 +61,7 @@ const routes = [
   { path: '/graphical-reports', name: 'graphical-reports', component: page('graphical-reports/index.vue') }, 
   { path: '/tabular-selected', name: 'tabular-selected', component: page('tabular-selected/index.vue') },
   { path: '/graphical-selected', name: 'graphical-selected', component: page('graphical-selected/index.vue') },
+  { path: '/newuser', name: 'newuser', component: page('newuser/newuser.vue') },
 
   {
     path: '/admin',

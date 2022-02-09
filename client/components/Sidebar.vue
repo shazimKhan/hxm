@@ -93,7 +93,7 @@ export default {
         collapseOnScroll: true,
         appName: 'HXM',
         items: [
-        {id: 'admin-center', name: 'Admin Center'},
+        {id: 'admin-center', name: 'Dashboard'},
         {id: 'employee-profile', name: 'Employee profile'},
         {id: 'work-schedule', name: 'Work Schedule'},
         {id: 'leave-management', name: 'Holiday Calender'},

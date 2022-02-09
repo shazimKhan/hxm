@@ -62,14 +62,14 @@
           
           if(resp.status === 200){
               // this.$router.go();
-              this.$toast.success(resp.data.msg);
+              // this.$toast.success(resp.data.msg);
               this.loading =false;
               this.clicked = false;
           }
 
         }).catch((error) => {
           console.log(error);
-          this.$toast.error(error);
+          // this.$toast.error(error);
           this.loading = false;
         });
       },
@@ -90,13 +90,13 @@
           
           if(resp.status === 200){
               // this.$router.go();
-              this.$toast.success(resp.data.msg);
+              // this.$toast.success(resp.data.msg);
               this.loading2 =false;
           }
 
         }).catch((error) => {
           console.log(error.message);
-          this.$toast.error(error.message);
+          // this.$toast.error(error.message);
           this.loading2 = false;
         })
       },

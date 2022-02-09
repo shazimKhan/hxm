@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenseController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\WorkScheduleController;
+use App\Http\Controllers\NewUserController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\GPDFController;
 use App\Http\Controllers\LeaveController;
@@ -65,6 +66,8 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('workschedule', [WorkScheduleController::class, 'saveWorkSchedule']);
     Route::get('getWorkSchedule', [WorkScheduleController::class, 'getWorkSchedule']);
     Route::post('deleteWorkSchedule', [WorkScheduleController::class, 'deleteWorkSchedule']);
+
+    Route::post('newuser', [NewUserController::class, 'saveNewUser']);
 
     Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
     Route::get('preview', [GPDFController::class, 'preview']);

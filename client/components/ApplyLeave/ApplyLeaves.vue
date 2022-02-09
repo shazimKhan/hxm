@@ -49,10 +49,10 @@
       </a-form-model-item>
       <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
         <a-button type="primary" :loading="loading" @click="onSubmit">
-         <nuxt-link to="/leavelist"> Submit</nuxt-link>
+          Submit
         </a-button>
         <a-button style="margin-left: 10px;">
-           <nuxt-link to="/time-sheet">Cancel</nuxt-link>
+            <nuxt-link to="/time-sheet"> Cancel</nuxt-link>
         </a-button>
       </a-form-model-item>
     </a-form-model>
@@ -157,18 +157,37 @@ export default {
       this.$refs.ruleForm.resetFields()
     },
     disabledStartDate (fromDate) {
-      const toDate = this.form.dateTo
-      if (!fromDate || !toDate) {
-        return false
-      }
-      return fromDate.valueOf() > toDate.valueOf()
+      //  const endValue = new Date(Date.now() - 8640000)
+      // const toDate = this.form.dateTo
+      // if (!fromDate || !toDate) {
+      //   return false
+      // }
+      // return endValue.valueOf() > fromDate.valueOf()
+      const endValue = new Date(Date.now() - 8640000)
+      // if (!value || !endValue) {
+      //   return false
+      // }
+      return endValue.valueOf() >= fromDate.valueOf()
     },
+    //      disabledDate(value){
+    // const endValue = new Date(Date.now() - 8640000)
+    //       // if (!value || !endValue) {
+    //       //   return false
+    //       // }
+    //       return endValue.valueOf() >= value.valueOf()
+      
+    //     },
     disabledEndDate (toDate) {
       const fromDate = this.form.dateFrom
-      if (!toDate || !fromDate) {
-        return false
-      }
-      return fromDate.valueOf() >= toDate.valueOf()
+      // if (!toDate || !fromDate) {
+      //   return false
+      // }
+      // return fromDate.valueOf() >= toDate.valueOf()
+       const endValue = new Date(Date.now() - 8640000)
+      // if (!value || !endValue) {
+      //   return false
+      // }
+      return endValue.valueOf() >= toDate.valueOf()
     },
     handleStartOpenChange (open) {
       if (!open) {

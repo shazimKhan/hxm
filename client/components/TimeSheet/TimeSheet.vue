@@ -69,8 +69,9 @@
             <a-button type="primary">
             <nuxt-link to="/apply-leave"> Apply Leave </nuxt-link>
             </a-button>
+            <br>
             <a-button type="primary">
-           <nuxt-link to="/leavelist"> Leave List </nuxt-link>
+            <nuxt-link to="/leavelist"> Leave List </nuxt-link>
             </a-button>
             </a-row>
           </div>

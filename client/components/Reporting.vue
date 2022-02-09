@@ -6,9 +6,10 @@
         <nuxt-link to="/tabular-reports"> Tabular Reports</nuxt-link>
     </a-button>
     <a-button class ="c">
-        <nuxt-link to="/graphical-reports"> Graphical Reports</nuxt-link>
+        <nuxt-link to="/reporting"> Graphical Reports</nuxt-link>
     </a-button>
   </div>
+  
 </template>
 
 <script>

@@ -66,7 +66,7 @@
       <a-card>
       <a-row class="PI-card">
               <a-col :span="6">
-                <h5>ME</h5>
+              <h5>ME</h5>
               </a-col>
               <a-col :span="8">
                 <strong>Effecticve as of :March 17,2017</strong>

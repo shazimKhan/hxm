@@ -10,7 +10,7 @@
       <a-button type="link" :size="size">
       Employee Info-At Hire
       </a-button><br>
-     <a-button type="link" :size="size">
+     <!-- <a-button type="link" :size="size">
       Personal Info
       </a-button><br>
      <a-button type="link" :size="size">
@@ -21,7 +21,7 @@
     </a-button><br>
    <a-button type="link" :size="size">
       Email Info
-    </a-button><br>
+    </a-button><br> -->
      </a-card>
     <!-- <button class="btn">    
     <a-button> > </a-button> <br>

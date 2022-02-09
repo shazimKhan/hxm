@@ -61,12 +61,12 @@ export default {
             //   icon: 'user',
             name: 'Import Table',
             route: 'admin.importTable'
-            },
-            {
-            //   icon: 'lock',
-            name: 'Import Data',
-            route: 'admin.importData'
             }
+            // {
+            // //   icon: 'lock',
+            // name: 'Import Data',
+            // route: 'admin.importData'
+            // }
         ]
     }
   },

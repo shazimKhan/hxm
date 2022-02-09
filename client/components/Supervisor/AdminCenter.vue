@@ -52,9 +52,13 @@
   <div style="padding: 20px;">
     <a-row :gutter="16">
       <a-col :span="6">
-        <a-card title="Reports" :bordered="false">
-          <p>Select a report to generate</p>
-          <a-col :span="8">
+        <a-card title="Create New User" :bordered="false">
+          <div class='new'>
+          <a-button type="primary">
+            <nuxt-link to="/newuser">Create New</nuxt-link>
+            </a-button>
+        </div>
+          <!-- <a-col :span="8">
                   <a-select
                     default-value="no"
                     style="width: 150%"
@@ -65,7 +69,7 @@
                       No Selection
                     </a-select-option>
                   </a-select>
-                </a-col>
+            </a-col> -->
         </a-card>
       </a-col>
       <a-col :span="8">
