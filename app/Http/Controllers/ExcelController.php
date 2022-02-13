@@ -16,8 +16,8 @@ class ExcelController extends Controller
         $this->response = $response;
     }
     
-    public function importTable(Request $request) {
-        $file = $request->import_file;
+public function importTable(Request $request) {
+        $file = $request->import_file;  
         // dd($file);
 
         try
